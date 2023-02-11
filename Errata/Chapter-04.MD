@@ -32,3 +32,7 @@ VBoxManage snapshot %VM% take "Snapshot 1" --description "Do NOT delete!!! This 
 2. Number of CPU cores and RAM not explained
      - 2 cores minimum, 4 cores is recommended for CPSMS
      - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
+3. Book was written with AMD processors in mind, not Intel processors
+    - Page 118 instructs checking `VT-x/AMD-V`, which is not available on systems using Intel CPUs
+## Preparing SmartConsole pp. 145-146
+1. Typo in step 4; the IP address of CPCM1 should be `10.0.0.2`
