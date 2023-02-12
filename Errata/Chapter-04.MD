@@ -5,7 +5,9 @@
     - TODO explain the differences
 2. Number of CPU cores and RAM not explained
     - The amount of RAM specified, 2GB is sufficient for a basic Windows server. However, when you later configure the SmartConsole VM, this SHOULD be increased to 4GB minimum
-    - The book does not address how many CPU cores to assign for the Windows VMs. You can safely default to 1 core for the servers, as long as you increase the number of cores to 4 for the SmartConsole VM later
+    - The book does not address how many CPU cores to assign for the Windows VMs. You can safely default to 1 core for the servers with the following notes:
+      - increase the number of cores to 4 for the SmartConsole VM later
+      - increase the number of cores to at least to 2 for ADDCDNS later (will use in chapter 11, page 432)
 3. Unclear what password to use Administrator p. 106
     - You can choose any password you want for the Administrator account here. You won't need it later.
     - However, to be consistent, use the standard password `CPL@b8110` which will be used later setting  up the servers
