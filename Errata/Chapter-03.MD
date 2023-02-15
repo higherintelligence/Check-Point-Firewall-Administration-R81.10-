@@ -1,7 +1,7 @@
 # Chapter 3
 
 ## Installing Oracle VirtualBox, pp. 77-88
-Installing VirtualBox witt the default Python 2.x setting causes an error to be displayed.
+Installing VirtualBox with the default Python 2.x setting causes an error to be displayed.
 
 Simply accept the error message and continue, ignoring the Python 2 dependencies. The alternative is to de-select the Python 2.x settings
 
