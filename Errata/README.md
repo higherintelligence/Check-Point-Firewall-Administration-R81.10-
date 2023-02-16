@@ -21,3 +21,8 @@ set protocols static route 0.0.0.0/0 dhcp-interface eth0
 commit
 save
 ```
+# Firewalls CPCM1 and CPCM2 missing routes
+```
+ set static-route default nexthop gateway 200.100.0.254
+ save config
+```
