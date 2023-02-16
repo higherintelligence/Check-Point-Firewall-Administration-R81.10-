@@ -13,12 +13,12 @@
     - Right-Click "IPv4" and select New Scope
     - Lenth 24 or subnet mask 255.255.255.0
     - the default of 8 days is a little long for our lab, try 8 hours
-    - Yes, configure settings > router 10.10.10.1
+    - Yes, configure settings > router 10.10.10.1, DNS 10.20.20.10, domain mycp.lab
     - remaining settings are defaults
     - Activete the scope
 2. The server ADDCDNS really struggles with 1 vCPU and 2GB RAM. It hard pegs at 100% CPU and is unresponsive.
     - Power it off and set to 2vCPU and 3GB RAM for better performance
-## Configuring rules for rivileged access pp. 432-433
+## Configuring rules for privileged access pp. 432-433
 1. Figure 11.7 shows the object "Router", but the objects created are actually "RouterLeft"and "RouterRight"
 ## Configuring DMZ access rules p. 436
 1. User will need to power om DMZSRV for the first time. While th 1 vCPU maxxed out a lot, it is survivable.
