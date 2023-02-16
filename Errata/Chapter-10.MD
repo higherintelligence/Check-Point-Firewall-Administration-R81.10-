@@ -48,3 +48,5 @@
     - cannot reach external sites by IP or DNS name
 
 Pending review of pages 449-464
+
+Resolving the default route and DNS settings did not enable Internet access per the policy as built. Changing to a standard "*Any*" destination enabled Internet access. Re-enabling the General Internet access rule as illustrated broken Internet access.
