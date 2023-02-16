@@ -41,7 +41,7 @@
     - install both Access Controll and Threat Prevention Policies
     - the policy installation should succed and the status icon should turn from red circle with a white X to a green circle with a white check
 ## Distributing and installing the otubound CA and ICA certificates to the client machines pp. 445-453
-1. Minor formatting in second paragraph. The name of the VM is SmartConsole, not SmartConsole_VM.
+1. Minor formatting in second paragraph. The name of the VM is SmartConsole; the object name is SmartConsole_VM.
 2. The book instructs the user to browse to the Internet. Internet access is not yet working.
     - no default route on the router
     - no DNS setting on SmartConsole VM
