@@ -13,3 +13,11 @@ Contact customercare@packetpub.com and mention the book title in the subject of 
 Errata at www.packtpub.com/support/errata and fill in the form.
 
 Errata are laid out separately by chapter in this folder.
+
+# Router missing default route
+```
+configure
+set protocols static route 0.0.0.0/0 dhcp-interface eth0
+commit
+save
+```
