@@ -17,7 +17,7 @@
     - remaining settings are defaults
     - Activete the scope
 2. The server ADDCDNS really struggles with 1 vCPU and 2GB RAM. It hard pegs at 100% CPU and is unresponsive.
-    - Power it off and set to 2vCPU and 3GB RAM for better performance
+    - Power it off and set to 2vCPU and 4GB RAM for better performance
 ## Configuring rules for privileged access pp. 432-433
 1. Figure 11.7 shows the object "Router", but the objects created are actually "RouterLeft"and "RouterRight"
 ## Configuring DMZ access rules p. 436
@@ -25,12 +25,14 @@
 ## Configuring rules for access to updatable objects pp. 436-437
 1. Importing updatable objects requires Internet access, which is not yet working
     - no default route on the router
+    - no DNS setting on SmartConsole VM
     - no firewall push (the first push is on page 444, without much explanation)
     - the action will fail, so the recommendation is to disable this incomplete rule for now
 ## Configuring the HTTPS Inspection p. 444
 1. Importing updatable objects requires Internet access, which is not yet working
     - no default route on the router
-    - no firewall push (the first push is at the bottom of this page (page 444) without much explanation
+    - no DNS setting on SmartConsole VM
+    - no firewall push (the first push is at the bottom of this page without much explanation)
     - the action will fail, so the recommendation is to disable this incomplete rule for now
     - those is no log setting in the screen shot or in the instructions, so it is up to the user to decide to enable logging on the rule
 2. The first time pushing policy is unceremoniously introduced as "Now is a good time to publish the pending changes and install the policy befor moving on to the next section"
@@ -42,6 +44,7 @@
 1. Minor formatting in second paragraph. The name of the VM is SmartConsole, not SmartConsole_VM.
 2. The book instructs the user to browse to the Internet. Internet access is not yet working.
     - no default route on the router
+    - no DNS setting on SmartConsole VM
     - cannot reach external sites by IP or DNS name
 
 Pending review of pages 449-464
