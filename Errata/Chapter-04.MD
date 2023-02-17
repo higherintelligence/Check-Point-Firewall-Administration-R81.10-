@@ -93,16 +93,16 @@ TODO Once `create_WINBASE.bat` is working, test and post a working `eject_and_sn
     - Use the latest script `clonevms.bat`
     - The author updated this script in the repo to give 4GB RAM to the SmartConsole VM
 ## Preparing cloned Windows hosts pp.134-138
-1. There are errors in the Windows configuration script LeftHost.ps1
+1. The book has the correct LeftHost.ps1 commands. The repo has an incorrect script.
     - Line with error: `Get-ScheduledTask -TaskName Scheduled Start | Disable-ScheduledTask  -Verbose`
     - Corrrected line: `Get-ScheduledTask -TaskName "Scheduled Start" | Disable-ScheduledTask  -Verbose`
-The following is a corrected script to match the rest of the scripts:
+The following is a correct script from the book, reformatted to match the other scripts:
 ```
 #Caution!!! This script disables the Windows Update Services.
 #It is intended for the use in isolated lab environments for space saving purposes only.
 #If you do not have space constraints, comment-out five lines before the last one and save the script!!! 
 Get-ScheduledTask -TaskName ServerManager | Disable-ScheduledTask -Verbose
-Rename-Computer -NewName RightHost
+Rename-Computer -NewName LeftHost
 New-NetIPAddress -IPAddress 10.10.10.10 -DefaultGateway 10.10.10.1 -PrefixLength 24 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
 $WindowsUpdate = "Scheduled Start"
 Get-ScheduledTask -TaskName $WindowsUpdate | Disable-ScheduledTask  -Verbose
