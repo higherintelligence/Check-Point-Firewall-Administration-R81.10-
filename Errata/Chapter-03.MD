@@ -9,9 +9,9 @@ Simply accept the error message and continue, ignoring the Python 2 dependencies
 
 1. Kernel Panic booting the VoyOS router
     - Set the number of CPUs to 2, not 1
-2. Incorrect syntax page 95 step 5
-    - correct command is `show interfaces ethernet eth0`
-    - the "brief" option is no longer available
+2. Missing step page 95 step 5
+    - before you show interfaces, `exit` from configuration mode
+    - `show interfaces ethernet eth0` will now work
 3. Missing command and line wrapping issues page 95, step 8
     - before entering the block of code, enter the `configure` command
     - line wrapping breaks up the code
@@ -31,3 +31,14 @@ set nat source rule 200 translation address 'masquerade'
 set system host-name 'router'
 set system name-server '9.9.9.9
 ```
+4. After step 13, confirm the default gateway static route was automatically added after configuring eth0 for dhcp
+``` show ip route ```
+If missing, you can configurate like this:
+```
+configure
+set protocols static route 0.0.0.0/0 dhcp-interface eth0
+commit
+save
+exit
+```
+
