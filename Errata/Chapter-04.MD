@@ -13,6 +13,9 @@
 3. Unclear what password to use Administrator p. 106
     - You can choose any password you want for the Administrator account here. You won't need it later.
     - However, to be consistent, use the standard password `CPL@b8110` which will be used later setting  up the servers
+## Windows Server base image scripted
+1. When the script is used, fails to boot with Windows Setup message "Windows cannot find the Microsoft License Terms. Make sure the installation source are valid and restart the installation."
+    - buildng suing the UI does not have this problem
 ## Finalizing the Windows Server base VM installation pp. 112-113
 1. The provided code uses two storage driver that are note defiled, "Floppy" and "SATA Controller"
     - TODO intitial testing had the VM mostly working when ignoring this error
