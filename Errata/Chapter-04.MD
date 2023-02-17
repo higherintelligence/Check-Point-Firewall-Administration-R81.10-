@@ -58,11 +58,14 @@ VBoxManage startvm %VM% --type gui
 ```
 ## Finalizing the Windows Server base VM installation pp. 112-113
 1. Perhaps not necessary, ejecting the Guest Additons CD image is a good best practice here
-2. Step 2 powershell.exe example works exactly as written. The trailing double quote (") is REQUIRED
-3. Step 3 provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
+2. Step 2 powershell.exe example is has the incorrect name for the powershell script
+    - the trailing double quote (") is REQUIRED
+    - should be `powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command (F:\Scripts\sysprep_for_WINBASE.ps1)"`
+    - the batch file `WINBASE_sysprep.bat` calls the powershell script correctly
+4. Step 3 provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
     - Initial testing had the VM mostly working when ignoring this error
-    - Created a corrected script and works well. Creates the Floppy storage and uses the correct storage name
-4. Step also references `eject_and_snapshot_WINBASE.bat`. This script needs to be corrected as well IF you manually set up base base image using the UI. The script needs to be AS IS if you built with `create_WINBASE.bat`.
+    - Created a corrected script and works well. Creates the Floppy storage and uses the correct storage name.
+5. Step also references `eject_and_snapshot_WINBASE.bat`. This script needs to be corrected as well IF you manually set up base base image using the UI. The script needs to be AS IS if you built with `create_WINBASE.bat`.
 ```
 SET PATH=%PATH%;C:\Program Files\Oracle\VirtualBox
 SET VM=WINBASE
@@ -84,5 +87,6 @@ TODO Once `create_WINBASE.bat` is working, test and post a working `eject_and_sn
      - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
 3. Book was written with AMD processors in mind, not Intel processors
     - Page 118 instructs checking `VT-x/AMD-V`, which is not available on systems using Intel CPUs
+4. Page 121 figure 4.33 has a small error in the screenshot; the mounted ISO file from the previous page is not shown
 ## Preparing SmartConsole pp. 145-146
 1. Typo in step 4; the IP address of CPCM1 should be `10.0.0.2`
