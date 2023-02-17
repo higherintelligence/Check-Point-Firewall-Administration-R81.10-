@@ -57,11 +57,12 @@ VBoxManage unattended install %VM% --iso=C:\CPBook\LabShare\ISOs_and_OVAs\WINBAS
 VBoxManage startvm %VM% --type gui
 ```
 ## Finalizing the Windows Server base VM installation pp. 112-113
-1. Step 2 powershell.exe example works exactly as written. The trailing double quote (") is REQUIRED
-2. Step 3 provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
+1. Perhaps not necessary, ejecting the Guest Additons CD image is a good best practice here
+2. Step 2 powershell.exe example works exactly as written. The trailing double quote (") is REQUIRED
+3. Step 3 provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
     - Initial testing had the VM mostly working when ignoring this error
     - Created a corrected script and works well. Creates the Floppy storage and uses the correct storage name
-3. Step also references `eject_and_snapshot_WINBASE.bat`. This script needs to be correctes as well IF you manually set up base base image using the UI. The script needs to be AS IS if you built with `create_WINBASE.bat`.
+4. Step also references `eject_and_snapshot_WINBASE.bat`. This script needs to be corrected as well IF you manually set up base base image using the UI. The script needs to be AS IS if you built with `create_WINBASE.bat`.
 ```
 SET PATH=%PATH%;C:\Program Files\Oracle\VirtualBox
 SET VM=WINBASE
