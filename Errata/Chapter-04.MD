@@ -17,8 +17,9 @@
     - However, to be consistent, use the standard password `CPL@b8110` which will be used later setting  up the servers
 ## Windows Server base image scripted
 1. When the script is used, fails to boot with Windows Setup message "Windows cannot find the Microsoft License Terms. Make sure the installation source are valid and restart the installation."
-    - building usng the UI does not have this problem
-    - `create_WINBASE.bat` has an extraneous slash one line 20 for hostpath
+    - building using the UI does not have this problem
+    - correcting the script as noted below does not solve the issue
+2. `create_WINBASE.bat` has an extraneous slash one line 20 for hostpath
 Reproducing issue error message:
 ```
 C:\CPBook\LabShare\Scripts>VBoxManage sharedfolder add WINBASE --name "Labshare" --hostpath "C:\CPBook\LabShare\" --automount --auto-mount-point F:
