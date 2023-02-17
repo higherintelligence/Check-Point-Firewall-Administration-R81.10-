@@ -17,7 +17,7 @@ VBoxManage modifyvm %VM% --intnet1 Net_DeadEnd
 VBoxManage modifyvm %VM% --graphicscontroller vboxsvga
 VBoxManage modifyvm %VM% --usbxhci on
 VBoxManage modifyvm %VM% --mouse usbtablet
-VBoxManage sharedfolder add %VM% --name "Labshare" --hostpath "C:\CPBook\LabShare\" --automount --auto-mount-point F:
+VBoxManage sharedfolder add %VM% --name "Labshare" --hostpath "C:\CPBook\LabShare" --automount --auto-mount-point F:
 VBoxManage modifyvm %VM% --clipboard-mode=bidirectional
 VBoxManage modifyvm %VM% --draganddrop=bidirectional
 VBoxManage modifyvm %VM% --nested-hw-virt on
