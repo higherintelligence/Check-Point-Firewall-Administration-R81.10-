@@ -23,15 +23,14 @@
 1. Step 2 powershell.exe example works exactly as written. The trailing double quote (") is REQUIRED
 2. Step 3 provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
     - Initial testing had the VM mostly working when ignoring this error
-    - Created a corrected script and worked well
+    - Created a corrected script and works well. Creates the Floppy storage and uses the correct storage name
 ```
-SET PATH=%PATH%;CL\ProgramFiles\Oracle\VirtualBox
+SET PATH=%PATH%;C:\Program Files\Oracle\VirtualBox
 SET VM=WINBASE
 VBoxManage storagectl %VM% --name "Floppy" --add floppy
-VBoxManage storagectl %VM% --name "SATA Controller" --add sata --controller IntelAHCI
 VBoxManage storageattach %VM% --storagectl Floppy --port 0 --device 0 --medium emptydrive
-VBoxManage storageattach %VM% --storagectl "SATA Controller" --port 1 --port 0 --device 0 --medium emptydrive
-VBoxManage storageattach %VM% --storagectl "SATA Controller" --port 2 --port 0 --device 0 --medium emptydrive
+VBoxManage storageattach %VM% --storagectl "SATA" --port 1 --device 0 --medium emptydrive
+VBoxManage storageattach %VM% --storagectl "SATA" --port 2 --device 0 --medium emptydrive
 VBoxManage snapshot %VM% take "Snapshot 1" --description "Do NOT delete!!! This snapshot is used to spawn the linked clones of all Windows components in the lab."
 ```
 ## Creating a Check Point base VM pp. 113-123
