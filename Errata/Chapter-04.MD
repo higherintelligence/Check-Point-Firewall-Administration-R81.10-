@@ -88,5 +88,9 @@ TODO Once `create_WINBASE.bat` is working, test and post a working `eject_and_sn
 3. Book was written with AMD processors in mind, not Intel processors
     - Page 118 instructs checking `VT-x/AMD-V`, which is not available on systems using Intel CPUs
 4. Page 121 figure 4.33 has a small error in the screenshot; the mounted ISO file from the previous page is not shown
+## Creating linked clones pp. 130-131
+1. The commands in the book are wrong, as they repeatedly refer to the single VM "CPCM1"
+    - Use the latest script `clonevms.bat`
+    - The author updated this script in the repo to give 4GB RAM to the SmartConsole VM
 ## Preparing SmartConsole pp. 145-146
 1. Typo in step 4; the IP address of CPCM1 should be `10.0.0.2`
