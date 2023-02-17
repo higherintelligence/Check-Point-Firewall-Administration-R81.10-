@@ -20,6 +20,7 @@
     - building using the UI does not have this problem
     - correcting the script as noted below does not solve the issue
 2. `create_WINBASE.bat` has an extraneous slash one line 20 for hostpath
+
 Reproducing issue error message:
 ```
 C:\CPBook\LabShare\Scripts>VBoxManage sharedfolder add WINBASE --name "Labshare" --hostpath "C:\CPBook\LabShare\" --automount --auto-mount-point F:
