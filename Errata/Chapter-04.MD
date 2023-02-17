@@ -20,14 +20,15 @@
     - building usng the UI does not have this problem
     - TODO reproduce the issue
 ## Finalizing the Windows Server base VM installation pp. 112-113
-1. The provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
-    - TODO intitial testing had the VM mostly working when ignoring this error
-    - TODO try adding the commands the script
+1. Step 2 powershell.exe example works exactly as written. The trailing double quote (") is REQUIRED
+2. Step 3 provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
+    - Initial testing had the VM mostly working when ignoring this error
+    - Created a corrected script and worked well
 ```
 SET PATH=%PATH%;CL\ProgramFiles\Oracle\VirtualBox
 SET VM=WINBASE
-<MISSING LINE defining Floppy controller>
-<MISSING LINE defining SATA controller>
+VboxManage storagectl %VM% --name "Floppy" --add floppy
+VBoxManage storagectl %VM% --name "SATA Controller" --add sata --controller IntelAHCI
 VBoxManage storageattach %VM% --storagectl Floppy --port 0 --device 0 --medium emptydrive
 VBoxManage storageattach %VM% --storagectl "SATA Controller" --port 1 --port 0 --device 0 --medium emptydrive
 VBoxManage storageattach %VM% --storagectl "SATA Controller" --port 2 --port 0 --device 0 --medium emptydrive
