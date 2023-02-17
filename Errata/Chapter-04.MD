@@ -19,7 +19,7 @@
 1. When the script is used, fails to boot with Windows Setup message "Windows cannot find the Microsoft License Terms. Make sure the installation source are valid and restart the installation."
     - buildng suing the UI does not have this problem
 ## Finalizing the Windows Server base VM installation pp. 112-113
-1. The provided code uses two storage driver that are note defiled, "Floppy" and "SATA Controller"
+1. The provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
     - TODO intitial testing had the VM mostly working when ignoring this error
     - TODO try adding the commands the script
 
