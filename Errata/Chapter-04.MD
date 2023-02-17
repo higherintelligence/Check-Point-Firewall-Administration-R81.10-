@@ -27,7 +27,7 @@
 ```
 SET PATH=%PATH%;CL\ProgramFiles\Oracle\VirtualBox
 SET VM=WINBASE
-VboxManage storagectl %VM% --name "Floppy" --add floppy
+VBoxManage storagectl %VM% --name "Floppy" --add floppy
 VBoxManage storagectl %VM% --name "SATA Controller" --add sata --controller IntelAHCI
 VBoxManage storageattach %VM% --storagectl Floppy --port 0 --device 0 --medium emptydrive
 VBoxManage storageattach %VM% --storagectl "SATA Controller" --port 1 --port 0 --device 0 --medium emptydrive
