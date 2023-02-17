@@ -1,3 +1,7 @@
+#Important!!! Change the name of the ADDCDNS VM and reboot before running this script!
+#Caution!!! This script disables the Windows Update Services.
+#It is intended for the use in isolated lab environments for space saving purposes only.
+#If you do not have space constraints, comment-out five lines before the last one and save the script!!! 
 Get-ScheduledTask -TaskName ServerManager | Disable-ScheduledTask -Verbose
 $WindowsUpdate = "Scheduled Start"
 Get-ScheduledTask -TaskName $WindowsUpdate | Disable-ScheduledTask  -Verbose
