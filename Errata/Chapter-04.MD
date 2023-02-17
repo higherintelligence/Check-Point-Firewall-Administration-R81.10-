@@ -121,11 +121,12 @@ Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -Serv
 ## Preparing Active Directory and the domain controller pp.139-146
 1. Page 139 step 7 has code that does not exist in the Github repository.
     - The following are the two files that can be created and added to the Scripts folder
-acdcdns.bat
+
+addcdns.bat
 ```
 powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command (F:\Scripts\acdcdns.ps1)"
 ```
-acdcdns.ps1
+addcdns.ps1
 ```
 Get-ScheduledTask -TaskName ServerManager | Disable-ScheduledTask -Verbose
 $WindowsUpdate = "Scheduled Start"
