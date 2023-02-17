@@ -15,7 +15,7 @@
 5. Unclear what password to use Administrator p. 106
     - You can choose any password you want for the Administrator account here. You won't need it later.
     - However, to be consistent, use the standard password `CPL@b8110` which will be used later setting  up the servers
-## Windows Server base image scripted
+## Windows Server base image scripted pp. 110-111
 1. When the script is used, fails to boot with Windows Setup message "Windows cannot find the Microsoft License Terms. Make sure the installation source are valid and restart the installation."
     - building using the UI does not have this problem
     - correcting the script as noted below does not solve the issue
@@ -61,7 +61,7 @@ VBoxManage startvm %VM% --type gui
 2. Step 3 provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
     - Initial testing had the VM mostly working when ignoring this error
     - Created a corrected script and works well. Creates the Floppy storage and uses the correct storage name
-3. Step also references `eject_and_snapshot_WINBASE.bat`. This script needs to be correct as well.
+3. Step also references `eject_and_snapshot_WINBASE.bat`. This script needs to be correctes as well IF you manually set up base base image using the UI. The script needs to be AS IS if you built with `create_WINBASE.bat`.
 ```
 SET PATH=%PATH%;C:\Program Files\Oracle\VirtualBox
 SET VM=WINBASE
@@ -71,6 +71,8 @@ VBoxManage storageattach %VM% --storagectl "SATA" --port 1 --device 0 --medium e
 VBoxManage storageattach %VM% --storagectl "SATA" --port 2 --device 0 --medium emptydrive
 VBoxManage snapshot %VM% take "Snapshot 1" --description "Do NOT delete!!! This snapshot is used to spawn the linked clones of all Windows components in the lab."
 ```
+
+TODO Once `create_WINBASE.bat` is working, test and post a working `eject_and_snapshot_WINBASE.bat`.
 ## Creating a Check Point base VM pp. 113-123
 1. Inconsistent naming of the Check Point base VM causes problems
     - Page 114 instructs to name it `CPBASE` and shows this in the screenshot
