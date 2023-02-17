@@ -112,6 +112,8 @@ Stop-Service wuauserv -Force
 Restart-Computer
 ```
 2. Missing DNS settings on these Windows hosts with static IP addresses
+    - LeftHost, SmartConsole, DMZSRV do not have DSN configured
+    - RightHost is set with DNS server 9.9.9.9
 Run the following powershell command on each server, or add to each Window server's PS1 file (addcdns commmands already include this)
 ```
 Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses 10.20.20.10
