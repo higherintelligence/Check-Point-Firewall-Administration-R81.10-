@@ -59,6 +59,7 @@ VBoxManage startvm %VM% --type gui
 2. Step 3 provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
     - Initial testing had the VM mostly working when ignoring this error
     - Created a corrected script and works well. Creates the Floppy storage and uses the correct storage name
+3. Step also references `eject_and_snapshot_WINBASE.bat`. This script needs to be correct as well.
 ```
 SET PATH=%PATH%;C:\Program Files\Oracle\VirtualBox
 SET VM=WINBASE
