@@ -93,7 +93,25 @@ TODO Once `create_WINBASE.bat` is working, test and post a working `eject_and_sn
     - Use the latest script `clonevms.bat`
     - The author updated this script in the repo to give 4GB RAM to the SmartConsole VM
 ## Preparing cloned Windows hosts pp.134-138
-1. Missing DNS settings on these Windows hosts with static IP addresses
+1. There are errors in the Windows configuration script LeftHost.ps1
+    - Line with error: `Get-ScheduledTask -TaskName Scheduled Start | Disable-ScheduledTask  -Verbose`
+    - Corrrected line: `Get-ScheduledTask -TaskName "Scheduled Start" | Disable-ScheduledTask  -Verbose`
+The following is a corrected script to match the rest of the scripts:
+```
+#Caution!!! This script disables the Windows Update Services.
+#It is intended for the use in isolated lab environments for space saving purposes only.
+#If you do not have space constraints, comment-out five lines before the last one and save the script!!! 
+Get-ScheduledTask -TaskName ServerManager | Disable-ScheduledTask -Verbose
+Rename-Computer -NewName RightHost
+New-NetIPAddress -IPAddress 10.10.10.10 -DefaultGateway 10.10.10.1 -PrefixLength 24 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
+$WindowsUpdate = "Scheduled Start"
+Get-ScheduledTask -TaskName $WindowsUpdate | Disable-ScheduledTask  -Verbose
+Get-ScheduledTask -TaskName StartComponentCleanUp | Disable-ScheduledTask  -Verbose
+Set-Service wuauserv -Startup Disabled
+Stop-Service wuauserv -Force
+Restart-Computer
+```
+2. Missing DNS settings on these Windows hosts with static IP addresses
 Run the following powershell command on each server, or add to each Window server's PS1 file (addcdns commmands already include this)
 ```
 Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses 10.20.20.10
