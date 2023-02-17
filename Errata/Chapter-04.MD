@@ -92,5 +92,33 @@ TODO Once `create_WINBASE.bat` is working, test and post a working `eject_and_sn
 1. The commands in the book are wrong, as they repeatedly refer to the single VM "CPCM1"
     - Use the latest script `clonevms.bat`
     - The author updated this script in the repo to give 4GB RAM to the SmartConsole VM
+## Preparing cloned Windows hosts pp.134-138
+1. Missing DNS settings on these Windows hosts with static IP addresses
+Run the following powershell command on each server, or add to each Window server's PS1 file (addcdns commmands already include this)
+```
+Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses 10.20.20.10
+```
+## Preparing Active Directory and the domain controller pp.139-146
+1. Page 139 step 7 has code that does not exist in the Github repository.
+    - The following are the two files that can be created and added to the Scripts folder
+acdcdns.bat
+```
+powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command (F:\Scripts\acdcdns.ps1)"
+```
+acdcdns.ps1
+```
+Get-ScheduledTask -TaskName ServerManager | Disable-ScheduledTask -Verbose
+$WindowsUpdate = "Scheduled Start"
+Get-ScheduledTask -TaskName $WindowsUpdate | Disable-ScheduledTask  -Verbose
+Get-ScheduledTask -TaskName StartComponentCleanUp | Disable-ScheduledTask  -Verbose
+Get-Service -Name wuauserv | set-service -StartupType  Disabled -Confirm:$false
+Get-Service -Name MapsBroker | set-service -StartupType  Disabled -Confirm:$false
+Get-Service -Name gupdate | set-service -StartupType  Disabled -Confirm:$false
+Stop-Service wuauserv -Force
+New-NetIPAddress -IPAddress 10.20.20.10 -DefaultGateway 10.20.20.1 -PrefixLength 24 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
+Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses 10.20.20.10
+Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools
+Install-ADDSForest -DomainName mycp.lab -DomainNetBIOSName AD -InstallDNS
+```
 ## Preparing SmartConsole pp. 145-146
 1. Typo in step 4; the IP address of CPCM1 should be `10.0.0.2`
