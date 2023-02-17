@@ -1,7 +1,11 @@
+#Caution!!! This script disables the Windows Update Services.
+#It is intended for the use in isolated lab environments for space saving purposes only.
+#If you do not have space constraints, comment-out five lines before the last one and save the script!!! 
 Get-ScheduledTask -TaskName ServerManager | Disable-ScheduledTask -Verbose
-Rename-Computer -NewName LeftHost
+Rename-Computer -NewName RightHost
 New-NetIPAddress -IPAddress 10.10.10.10 -DefaultGateway 10.10.10.1 -PrefixLength 24 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
-Get-ScheduledTask -TaskName Scheduled Start | Disable-ScheduledTask  -Verbose
+$WindowsUpdate = "Scheduled Start"
+Get-ScheduledTask -TaskName $WindowsUpdate | Disable-ScheduledTask  -Verbose
 Get-ScheduledTask -TaskName StartComponentCleanUp | Disable-ScheduledTask  -Verbose
 Set-Service wuauserv -Startup Disabled
 Stop-Service wuauserv -Force
