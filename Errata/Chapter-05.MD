@@ -20,3 +20,11 @@
     - Remember to be in expert mode (see step 4, enter the `expert` command)
     - You must run the command provided in the box to retrieve the correct password hash: `dbget passwd:admin:passwd`
     - When editing the file `CPCM2_FTCW`, put the hash you retrieved in single quotes after `admin_hash`. The box has a typo; there should be no space between the single quotes.
+## IPv4 Static Routes pp. 188-191
+1. Figure 5.35 shows the default gateway static route before it is configured. Page 167 specifically said not to configure a default gateway. After a section of steps you are NOT supposed to follow, a statement without a step number is made, confusing the user.
+    - Follow the instructions "When we click Add Gateway or Edit in this section"; enter the IP address according to Figure 5.37
+    - In the IPv4 Static Routes section, click on "Default", then click Edit
+    - Click Add Gateway then IP Address
+    - IPv4 Address: 200.100.0.254
+    - The other settings shown in the book don't work as shown
+    - You should now be able to ping 8.8.8.8 from CPCM1
