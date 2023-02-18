@@ -118,7 +118,7 @@ Run the following powershell command on each server, or add to each Window serve
 ```
 Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses 10.20.20.10
 ```
-## Preparing Active Directory and the domain controller pp.139-146
+## Preparing Active Directory and the domain controller pp.139-143
 1. Consider increasing vPCU and RAM on the ADDCDNS VM
 2. Page 139 step 7 has code that does not exist in the Github repository.
     - The following are the two files that can be created and added to the Scripts folder
@@ -143,5 +143,8 @@ Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -Serv
 Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools
 Install-ADDSForest -DomainName mycp.lab -DomainNetBIOSName AD -InstallDNS
 ```
+## Preparing cloned Check Point hosts pp. 143-145
+1. Recommend increasing RAM for CPSMS
+    - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
 ## Preparing SmartConsole pp. 145-146
 1. Typo in step 4; the IP address of CPCM1 should be `10.0.0.2`
