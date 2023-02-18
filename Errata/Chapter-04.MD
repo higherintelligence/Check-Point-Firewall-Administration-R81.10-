@@ -125,7 +125,7 @@ Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -Serv
 
 addcdns.bat
 ```
-powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command (F:\Scripts\acdcdns.ps1)"
+powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command (F:\Scripts\addcdns.ps1)"
 ```
 addcdns.ps1
 ```
