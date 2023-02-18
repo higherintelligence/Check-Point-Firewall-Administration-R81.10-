@@ -5,8 +5,7 @@
     - This is due to changes in the VirtualBox UI
 2. Number of CPU cores and RAM not explained
     - The amount of RAM specified, 2GB is sufficient for a basic Windows server with the following notes:
-      - When you later configure the SmartConsole VM, this SHOULD be increased to 4GB minimum
-      - When you later configure the ADDCDNS VM, this SHOULD be increased to 4GB minimum
+      - the clone script gives 4GB RAM to SmartConsole VM
     - The book does not address how many CPU cores to assign for the Windows VMs. You can safely default to 1 core for the servers with the following notes:
       - increase the number of cores to 4 for the SmartConsole VM later
       - increase the number of cores to at least 2 for ADDCDNS later (will use in chapter 11, page 432)
@@ -147,4 +146,5 @@ Install-ADDSForest -DomainName mycp.lab -DomainNetBIOSName AD -InstallDNS
 1. Recommend increasing RAM for CPSMS
     - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
 ## Preparing SmartConsole pp. 145-146
+1. Consider adding vCPUs to SmartConsole VM
 1. Typo in step 4; the IP address of CPCM1 should be `10.0.0.2`
