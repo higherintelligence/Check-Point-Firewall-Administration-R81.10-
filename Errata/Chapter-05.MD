@@ -6,11 +6,15 @@
 3. Adding more vCPUs doen't always help; 4 vCPUs seems optimal and more than that increases the error messages
 4. Multiple resets maybe be required; allow additional time after the console login prompt appears for system services to start
 ## First Time Configuration Wizard for gateways pp. 167-172
-1. The book is missing a step between steps 3 and 4, however this may be intentional as this is later configured on page 186
-    - Device Information
+1. The book is missing three steps between steps 3 and 4
+    - Device Information (missing this may be intentional as this is later configured on page 186)
         - Host Name: CPCM1
         - Domain Name: mycp.lab
         - Primary DNS Server: 10.20.20.10
+    - Date and Time Settings
+        - Set the date and time as you do on the SMS on page 159
+    - Installation Type
+        - Select Security Gateway and/or Security Management and click Next
 ## First-time configuration using the CLI pp. 172-177
 1. Page 174, step 8 has an error in the code and is not entirely clear about the correct values to enter
     - Remember to be in expert mode (see step 4, enter the `expert` command)
