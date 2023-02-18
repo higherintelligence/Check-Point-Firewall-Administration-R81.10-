@@ -9,7 +9,7 @@ The steps to build the lab are dispersed through the book. This page reference s
 | Installing VirtualBox                         |                      77-76 |
 | Router                                        |                      86-96 |
 | Create Windows server base image              |                     98-113 |
-| Create Check POint base image                 |                    113-130 |
+| Create Check Point base image                 |                    113-130 |
 | Create linked clones Windows and Check Point  |                    130-133 |
 | Initial setup Windows servers                 |                    134-143 |
 | Initial setup Check Point hosts               |                    143-146 |
