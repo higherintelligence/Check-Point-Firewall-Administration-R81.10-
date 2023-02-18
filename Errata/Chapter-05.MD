@@ -26,5 +26,4 @@
     - In the IPv4 Static Routes section, click on "Default", then click Edit
     - Click Add Gateway then IP Address
     - IPv4 Address: 200.100.0.254
-    - The other settings shown in the book don't work as shown
     - You should now be able to ping 8.8.8.8 from CPCM1
