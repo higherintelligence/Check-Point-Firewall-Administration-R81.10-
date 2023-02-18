@@ -121,6 +121,7 @@ Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -Serv
 ## Preparing Active Directory and the domain controller pp.139-146
 1. Page 139 step 7 has code that does not exist in the Github repository.
     - The following are the two files that can be created and added to the Scripts folder
+    - Don't forget to rename the system to ADDCDNS and reboot before runnning the script
 
 addcdns.bat
 ```
