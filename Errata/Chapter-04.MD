@@ -16,9 +16,8 @@
     - You can choose any password you want for the Administrator account here. You won't need it later.
     - However, to be consistent, use the standard password `CPL@b8110` which will be used later setting  up the servers
 ## Windows Server base image scripted pp. 110-111
-1. When the script is used, fails to boot with Windows Setup message "Windows cannot find the Microsoft License Terms. Make sure the installation source are valid and restart the installation."
+1. Page 110 step 1. says to run the command "from an elevated Command Prompt." If you fail to do this, the VM will fail to boot with Windows Setup message "Windows cannot find the Microsoft License Terms. Make sure the installation source are valid and restart the installation."
     - building using the UI does not have this problem
-    - correcting the script as noted below does not solve the issue
 2. `create_WINBASE.bat` has an extraneous slash one line 20 for hostpath
 
 Reproducing issue error message:
@@ -76,7 +75,8 @@ VBoxManage storageattach %VM% --storagectl "SATA" --port 2 --device 0 --medium e
 VBoxManage snapshot %VM% take "Snapshot 1" --description "Do NOT delete!!! This snapshot is used to spawn the linked clones of all Windows components in the lab."
 ```
 
-TODO Once `create_WINBASE.bat` is working, test and post a working `eject_and_snapshot_WINBASE.bat`.
+TODO After testing the fix Licensing Boot Fix, test and post a working `eject_and_snapshot_WINBASE.bat`. (want to confirm supporting both build methods)
+
 ## Creating a Check Point base VM pp. 113-123
 1. Inconsistent naming of the Check Point base VM causes problems
     - Page 114 instructs to name it `CPBASE` and shows this in the screenshot
