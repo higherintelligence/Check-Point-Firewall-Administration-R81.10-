@@ -12,4 +12,4 @@ published.
 Contact customercare@packetpub.com and mention the book title in the subject of your mesages for assistance, or report
 Errata at www.packtpub.com/support/errata and fill in the form.
 
-Errata are laid out separately by chapter in this folder.
+Errata are laid out separately by chapter in this folder. In a  number of cases, the author graciously provided assistance in identifying where I made mistakes, and how to correct them.
