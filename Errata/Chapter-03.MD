@@ -33,7 +33,7 @@ set system name-server '9.9.9.9
 ```
 4. After step 13, confirm the default gateway static route was automatically added after configuring eth0 for dhcp
 ``` show ip route ```
-If missing, you can configurate like this:
+If missing, you can configure it like this:
 ```
 configure
 set protocols static route 0.0.0.0/0 dhcp-interface eth0
