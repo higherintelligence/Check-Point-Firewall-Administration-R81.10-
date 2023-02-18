@@ -6,4 +6,4 @@ The book is a great step-by-step hands-on learning tool for Check Point firewall
 
 However, there are a number of frustrating mistakes in the book that may cause some people who have purchased the book to simply give up.
 
-This repo provides some errata and solutions to problems encountered.
+This repo provides some errata and solutions to problems encountered, many with assistance from the author. (thank you!)
