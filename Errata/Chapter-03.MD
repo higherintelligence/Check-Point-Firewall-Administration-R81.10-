@@ -9,9 +9,9 @@ Simply accept the error message and continue, ignoring the Python 2 dependencies
 
 1. Kernel Panic booting the VoyOS router
     - Set the number of CPUs to 2, not 1
-2. Missing step page 95 step 5
-    - before you show interfaces, `exit` from configuration mode
-    - `show interfaces ethernet eth0` will now work
+2. Missing step page 95 step 4
+    - add step 4 E. exit
+    - before you show interfaces, you need to `exit` from configuration mode
 3. Missing command and line wrapping issues page 95, step 8
     - before entering the block of code, enter the `configure` command
     - line wrapping breaks up the code
