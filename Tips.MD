@@ -10,3 +10,5 @@
     - click on Default Settings
     - click Save
     - this does not modify previously saved sessions
+2. Check if the management server is completely up (works for SMS and MDS)
+    - `$MDS_FWDIR/scripts/check_cpm_status.sh`
