@@ -21,17 +21,13 @@
 ## Configuring rules for privileged access pp. 432-433
 1. Figure 11.7 shows the object "Router", but the objects created are actually "RouterLeft"and "RouterRight"
 ## Configuring DMZ access rules p. 436
-1. User will need to power om DMZSRV for the first time. While th 1 vCPU maxxed out a lot, it is survivable.
+1. User will need to power om DMZSRV for the first time. While the 1 vCPU maxxed out a lot, it is survivable.
 ## Configuring rules for access to updatable objects pp. 436-437
 1. Importing updatable objects requires Internet access, which is not yet working
-    - no default route on the router
-    - no DNS setting on SmartConsole VM
     - no firewall push (the first push is on page 444, without much explanation)
     - the action will fail, so the recommendation is to disable this incomplete rule for now
 ## Configuring the HTTPS Inspection p. 444
 1. Importing updatable objects requires Internet access, which is not yet working
-    - no default route on the router
-    - no DNS setting on SmartConsole VM
     - no firewall push (the first push is at the bottom of this page without much explanation)
     - the action will fail, so the recommendation is to disable this incomplete rule for now
     - those is no log setting in the screen shot or in the instructions, so it is up to the user to decide to enable logging on the rule
@@ -43,10 +39,10 @@
 ## Distributing and installing the otubound CA and ICA certificates to the client machines pp. 445-453
 1. Minor formatting in second paragraph. The name of the VM is SmartConsole; the object name is SmartConsole_VM.
 2. The book instructs the user to browse to the Internet. Internet access is not yet working.
-    - no default route on the router
-    - no DNS setting on SmartConsole VM
     - cannot reach external sites by IP or DNS name
 
-Pending review of pages 449-464
+Internet access per the policy as built. Changing to a standard "*Any*" destination enabled Internet access. Re-enabling the General Internet access rule as illustrated broke Internet access.
 
-Resolving the default route and DNS settings did not enable Internet access per the policy as built. Changing to a standard "*Any*" destination enabled Internet access. Re-enabling the General Internet access rule as illustrated broken Internet access.
+Building Lab with firewall default routes and DNS settings, and will try and track down the problem.
+
+Pending review of pages 449-464
