@@ -5,6 +5,12 @@
 2. Very long delays booting Check Point VMs; if there is disk and CPU activity, try letting it run for 15 minutes more
 3. Adding more vCPUs doen't always help; 4 vCPUs seems optimal and more than that increases the error messages
 4. Multiple resets maybe be required; allow additional time after the console login prompt appears for system services to start
+## First Time Configuration Wizard for gateways pp. 167-172
+1. The book is missing a step between steps 3 and 4, however this may be intentional as this is later configured on page 186
+    - Device Information
+        - Host Name: CPCM1
+        - Domain Name: mycp.lab
+        - Primary DNS Server: 10.20.20.10
 ## First-time configuration using the CLI pp. 172-177
 1. Page 174, step 8 has an error in the code and is not entirely clear about the correct values to enter
     - Remember to be in expert mode (see step 4, enter the `expert` command)
