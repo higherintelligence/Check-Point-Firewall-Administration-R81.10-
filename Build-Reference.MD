@@ -13,7 +13,7 @@ The steps to build the lab are dispersed through the book. This page reference s
 | Create linked clones Windows and Check Point  |           130-133 |
 | Initial setup Windows servers                 |           134-143 |
 | Initial setup Check Point hosts               |           143-146 |
-| Check Point Managment (SMS) setup             |           153-166 |
+| Check Point Manaegment (SMS) setup            |           153-166 |
 | Configure CPCM1 and CPCM2 firewalls           |  167-176, 182-204 |
 
 more steps to add
