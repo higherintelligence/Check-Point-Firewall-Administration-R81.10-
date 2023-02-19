@@ -18,5 +18,6 @@ The steps to build the lab are dispersed through the book. This page reference s
 | Install SmartConsole                          |                        354 |
 | Synchronize times                             |                    354-358 |
 | Create cluster                                |                    359-374 |
+| Creating networks and host objects            |                    377-383 |
 
 more steps to add
