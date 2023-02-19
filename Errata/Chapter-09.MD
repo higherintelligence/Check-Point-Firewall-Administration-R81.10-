@@ -10,5 +10,5 @@
 2. Sometimes with the lab cab be a little unstable (losing SmartConsole session during cluster setup for example). If this happens, you will discover that once you initialize Secure Internal Communication (SIC) in a gateway, you can't do it again.
     - When this happens, reset SIC on the gateway
     - `cpconfig`, option 5, Secure Internal communication, confirm twice, enter a passphrase
-3. Figure 9.30 on page 373 is incorrect
-    - The screenshot shows the gateways with a green/checkmark "OK" status; in reality they will be in an error state until the policy is pushed (much) later
+3. Step 23 on page 373 states the status will change to Green, as shown in Figure 9.30. Status is actually Red at this point.
+    - The screenshot shows the gateways with a green/checkmark "OK" status; in reality they will be in an error state until the policy is pushed (much) later on page 444
