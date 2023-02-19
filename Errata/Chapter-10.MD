@@ -1,8 +1,5 @@
 # Chapter 10
 
-## Preventing unnecessary NAT p. 413
-1. "Create the No NAT rule in the lab" could leave you confused where to add it
-    - Click "Add rule to top" and add the illustrated rule at the top, as rule 1
 ## When NAT is not enough pp. 414-422
 1. Don't be confused, follow the note: this section should be used for reference only
     - the working in steps 1-4 seems to imply to actually perform it, and install the policy; don't do it
