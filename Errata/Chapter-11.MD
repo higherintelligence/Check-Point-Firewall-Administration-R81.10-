@@ -1,5 +1,8 @@
 # Chapter 11
 
+## Deploying the access control policy structure p. 428
+1. The stealth rule showed only protects the physical IP address of the clutser member. The reference to Chapter 8 page 326 shows an ambiguous group named "CP_Gateways".
+    - some administrators also block all traffic to the firewall cluster IP address while explicity allowing ping or perhaps traceroute just above it
 ## Configuring DHCP on Windows Server p. 432
 1. If the "Server Manager App" does not open automatically, user may feel lost installing DHCP and configuring a DHCP scope. Search the Start menu for Add Rules and Features doesn't return anything useful.
     - Start Server Manager
