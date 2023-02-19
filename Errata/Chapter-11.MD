@@ -30,6 +30,7 @@
     - Power it off and set to 2vCPU and 4GB RAM for better performance
 ## Configuring rules for privileged access pp. 434-435
 1. Figure 11.7 shows the object "Router", but the objects created are actually "RouterLeft"and "RouterRight"
+2. Figure 11.7 show an incorrect rule  name, should be something like "Block RDP non-admins Drop."
 ## Configuring DMZ access rules p. 436
 1. User will need to power om DMZSRV for the first time. While the 1 vCPU maxxed out a lot, it is survivable.
 ## Configuring rules for access to updatable objects pp. 436-437
