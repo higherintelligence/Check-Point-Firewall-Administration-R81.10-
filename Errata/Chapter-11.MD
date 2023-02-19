@@ -33,6 +33,7 @@
 2. Figure 11.7 show an incorrect rule  name, should be something like "Block RDP non-admins Drop."
 ## Configuring DMZ access rules p. 436
 1. User will need to power om DMZSRV for the first time. While the 1 vCPU maxxed out a lot, it is survivable.
+2. Rule 17 has an incorrect rule name. It should be "Internal1 network to DMZ Accept"
 ## Configuring rules for access to updatable objects pp. 436-437
 1. Importing updatable objects requires Internet access, which is not yet working
     - no firewall push (the first push is on page 444, without much explanation)
