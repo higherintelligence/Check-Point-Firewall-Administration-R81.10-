@@ -19,5 +19,6 @@ The steps to build the lab are dispersed through the book. This page reference s
 | Synchronize times                             |                    354-358 |
 | Create cluster                                |                    359-374 |
 | Creating networks and host objects            |                    377-383 |
-
+| Configure NAT objects                         |     401-402, 405, 410, 413 |
+| Create No-NAT rule                            |                        413 |
 more steps to add
