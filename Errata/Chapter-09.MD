@@ -6,5 +6,8 @@
     - Log in as `secadmin` / `CPL@b8110` to continue
 2. Check Point VMs are extremely slow to load, and may crash or freeze. Reset (power cycle) and try again, may require more that one reboot.
 ## Creating a gateway cluster pp. 359-375
-1. Screenshot is incorrect
-    - the screenshow shows the gateways with a green/checkmark "OK" status; in reality they will be in an error state until the policy is pushed (much) later
+1. Sometimes with the lab cab be a little unstable (losing SmartConsole session during cluster setup for example). If this happene, you will discover that once you initialize Secure Internal Communication (SIC) in a gateway, you can't do it again.
+    - When this happens, reset SIC on the gateway
+    - `cpconfig`, option 5, Secure Internal communication, confirm twice, enter a passphrase
+2. Figure 9.30 on page 373 is incorrect
+    - the screenshot shows the gateways with a green/checkmark "OK" status; in reality they will be in an error state until the policy is pushed (much) later
