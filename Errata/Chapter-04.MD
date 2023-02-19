@@ -84,12 +84,13 @@ TODO After testing the fix Licensing Boot Fix, test and post a working `eject_an
 2. Number of CPU cores and RAM not explained
      - 2 cores minimum, 4 cores is recommended for CPSMS
      - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
+     - The updated repo now provisions 6GB RAM for CPSMS
 3. Book was written with AMD processors in mind, not Intel processors
     - Page 118 instructs checking `VT-x/AMD-V`, which is not available on systems using Intel CPUs
 4. Page 121 figure 4.33 has a small error in the screenshot; the mounted ISO file from the previous page is not shown
 ## Creating linked clones pp. 130-131
 1. The commands in the book are wrong, as they repeatedly refer to the single VM "CPCM1"
-    - Use the latest script `clonevms.bat`
+    - Use the latest script `clonevms.bat` in the repo
     - The author updated this script in the repo to give 4GB RAM to the SmartConsole VM
 ## Preparing cloned Windows hosts pp.134-138
 1. The book has the correct LeftHost.ps1 commands. The repo has an incorrect script.
@@ -143,7 +144,7 @@ Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools
 Install-ADDSForest -DomainName mycp.lab -DomainNetBIOSName AD -InstallDNS
 ```
 ## Preparing cloned Check Point hosts pp. 143-145
-1. Recommend increasing RAM for CPSMS
+1. The updated repo script now increases CPSMS RAM to 6GB
     - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
 ## Preparing SmartConsole pp. 145-146
 1. Consider adding vCPUs to SmartConsole VM
