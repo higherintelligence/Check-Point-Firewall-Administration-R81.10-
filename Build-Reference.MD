@@ -21,4 +21,10 @@ The steps to build the lab are dispersed through the book. This page reference s
 | Creating networks and host objects            |                    377-383 |
 | Configure NAT objects                         |     401-402, 405, 410, 413 |
 | Create No-NAT rule                            |                        413 |
+| Create policy                                 |                    428-440 |
+| Configuring DHCP on Windows server            |                        432 |
+| https inspection                              |                    441-453 |
+| Identity awareness                            |                    453-464 |
+| Configure remote gateway for VPN              |                    467-486 |
+
 more steps to add
