@@ -22,6 +22,7 @@ The steps to build the lab are dispersed through the book. This page reference s
 | Configure NAT objects                         |     401-402, 405, 410, 413 |
 | Create No-NAT rule                            |                        413 |
 | Create policy                                 |                    428-440 |
+| Configure DHCP and DHCP Relay                 |                    430-431 |
 | Configuring DHCP on Windows server            |                        432 |
 | https inspection                              |                    441-453 |
 | Identity awareness                            |                    453-464 |
