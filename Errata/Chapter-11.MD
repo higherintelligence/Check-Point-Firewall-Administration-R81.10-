@@ -44,7 +44,7 @@
         - Action: Allow
         - Track: Log
     - push policy
-    - power on LeftHost and browse to http://10.30.30.10 on  DMZSRV
+    - power on LeftHost and browse to http://10.30.30.10 on DMZSRV
         - note that the DMZSRV really strugged with one (1) vCPU; better with two
     - test internet access to google.com from SmartConsole and LeftHost; if these tests fail:
         - check that the router VM is healthy and can ping to the internet (has default, route, etc.); reboot as needed
@@ -53,6 +53,8 @@
 1. Importing updatable objects requires Internet access, which is not yet working
     - no firewall push (the first push is on page 444, without much explanation)
     - the action will fail, so the recommendation is to disable this incomplete rule for now
+    - see workaround above, "Missing policy push and connectivity testing"; in our testing it still failed
+    - See sk122636 for troubleshooting this issue
 ## Configuring the HTTPS Inspection p. 444
 1. Importing updatable objects requires Internet access, which is not yet working
     - no firewall push (the first push is at the bottom of this page without much explanation)
