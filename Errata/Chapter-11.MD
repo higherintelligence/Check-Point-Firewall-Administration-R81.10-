@@ -65,13 +65,9 @@
     - from the Standard policy you have created click the Install Policy button or click the main hamburger menu and click Install Policy
     - install both Access Controll and Threat Prevention Policies
     - the policy installation should succed and the status icon should turn from red circle with a white X to a green circle with a white check
-## Distributing and installing the otubound CA and ICA certificates to the client machines pp. 445-453
+## Distributing and installing the outbound CA and ICA certificates to the client machines pp. 445-453
 1. Minor formatting in second paragraph. The name of the VM is SmartConsole; the object name is SmartConsole_VM.
-2. The book instructs the user to browse to the Internet. Internet access is not yet working.
-    - cannot reach external sites by IP or DNS name
+2. The book instructs the user to browse to the Internet. With the notes provided, this should be working perfectly.
 
-Internet access per the policy as built. Changing to a standard "*Any*" destination enabled Internet access. Re-enabling the General Internet access rule as illustrated broke Internet access.
 
-Building Lab with firewall default routes and DNS settings, and will try and track down the problem.
-
-Pending review of pages 449-464
+Pending review of pages 452-464
