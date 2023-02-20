@@ -12,3 +12,5 @@
     - this does not modify previously saved sessions
 2. Check if the management server is completely up (works for SMS and MDS)
     - `$MDS_FWDIR/scripts/check_cpm_status.sh`
+3. You can try using `certutil` to install your custom root certificates (pp. 441-452) using the command line
+    - `certutil -enterprise -f -v -AddStore "Root" <Cert File path>`
