@@ -25,8 +25,9 @@ The steps to build the lab are dispersed through the book. This page reference s
 | Configure DHCP and DHCP Relay                 |                    430-431 |
 | Configuring DHCP on Windows server            |                        432 |
 | Configuring web server on DMZSRV              |                        436 |
-| https inspection                              |                    441-453 |
+| HTTPS inspection                              |                    441-453 |
 | Identity awareness                            |                    453-464 |
+| Add users to AD for Identity Awareness        |                        454 |
 | Configure remote gateway for VPN              |                    467-486 |
 
 more steps to add
