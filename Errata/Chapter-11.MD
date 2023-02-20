@@ -72,5 +72,7 @@
 1. Page 459 paragraph directs the user to access to access https://200.100.0.1/connect, but there are two issues
     - this does not work correctly until the policy is pushed
     - there is a certificate error; the previously installed certificates didn't resolve this
-
-Pending review of pages 459-464
+## Creating and using access roles pp. 459-460
+1. If you have issus loading the AD objects on page 460, try closing out of SmartConsole, then try again
+2. 
+Pending review of pages 461-464
