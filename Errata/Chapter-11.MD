@@ -74,5 +74,7 @@
     - there is a certificate error; the previously installed certificates didn't resolve this
 ## Creating and using access roles pp. 459-460
 1. If you have issus loading the AD objects on page 460, try closing out of SmartConsole, then try again
-2. 
-Pending review of pages 461-464
+## Testing access role-based rules pp. 461-464
+1. If your connection from SmartConsole as user `itadmin` can access facebook initially
+    - continue testing and come back to re-test `itadmin` on SmartConsole with facebook later. It does work, if not right away
+    - Take the time to look carefully how the logs look when Facebook is blocked for itadmin
