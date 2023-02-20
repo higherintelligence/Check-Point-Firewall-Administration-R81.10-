@@ -8,14 +8,16 @@ The author has carefully sized the lab's virtual machines for optimal performanc
     - VirtualBox does support memory balooning, but should not have to for this lab.
 
 vCPU
-|  VM                   |  vCPU  |  Count  |  Total  |
+|  VM                      |  vCPU  |  Count  |  Total  |
 |---|---:|---:|---:|
-| Router                |      2 |       1 |       2 |
-| Windows VMs           |      2 |       5 |      10 |
-| Check Point SMS       |      4 |       1 |       4 |
-| Check Point Gateways  |      4 |       3 |      12 |
+| Router                   |      2 |       1 |       2 |
+| Windows VM SmartConsole  |      2 |       1 |       2 |
+| Windows ADDCDNS          |      2 |       1 |       2 |
+| Windows VMs remaining    |      1 |       3 |       3 |
+| Check Point SMS          |      4 |       1 |       4 |
+| Check Point Gateways     |      4 |       3 |      12 |
 |---|---|---|---|
-| Total                 |        |         |      28 |
+| Total                    |        |         |      24 |
 
 RAM
 |  VM           |  RAM GB  |
@@ -52,7 +54,7 @@ Comparing this to my test system, HP Omen laptop:
         - Number of efficient-cores: 8
         - Total threads: 20
 
-Leaves 4GB for the host and 8 threads short.
+Leaves 4GB for the host and 4 threads short.
 
 ## Usability
 1. Increase the default font size in putty
