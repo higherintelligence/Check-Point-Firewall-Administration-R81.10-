@@ -41,4 +41,4 @@ commit
 save
 exit
 ```
-
+When this disappears, rebooting the router restores the route.
