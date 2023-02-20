@@ -1,4 +1,5 @@
 # Chapter 4
+Ensure you are using the latest scripts downloaded from the official repo. These have the latest fixes.
 
 ## Creating a Windows Server base VM in the GUI pp. 99-109
 1. Different user interface from what is pictured when configuring the VM
@@ -80,7 +81,7 @@ TODO After testing the fix Licensing Boot Fix, test and post a working `eject_an
 1. Inconsistent naming of the Check Point base VM causes problems
     - Page 114 instructs to name it `CPBASE` and shows this in the screenshot
     - Page 117 shows a different name `CPBASE1`
-    - The official code respository script  `eject_and_snapshot_CPBASE.bat` has a typo, calling it `CPBASE1` with causes the script to fail
+    - The official code respository script  `eject_and_snapshot_CPBASE.bat` has the corrected code
 2. Number of CPU cores and RAM not explained
      - 2 cores minimum, 4 cores is recommended for CPSMS
      - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
@@ -93,10 +94,8 @@ TODO After testing the fix Licensing Boot Fix, test and post a working `eject_an
     - Use the latest script `clonevms.bat` in the repo
     - The author updated this script in the repo to give 4GB RAM to the SmartConsole VM
 ## Preparing cloned Windows hosts pp.134-138
-1. The book has the correct LeftHost.ps1 commands. The repo has an incorrect script.
-    - Line with error: `Get-ScheduledTask -TaskName Scheduled Start | Disable-ScheduledTask  -Verbose`
-    - Corrrected line: `Get-ScheduledTask -TaskName "Scheduled Start" | Disable-ScheduledTask  -Verbose`
-The following is a correct script from the book, reformatted to match the other scripts:
+1. The book has the correct LeftHost.ps1 commands. The repo script has been updated with the correct commands.
+The following is the correct script from the book, reformatted to match the other scripts:
 ```
 #Caution!!! This script disables the Windows Update Services.
 #It is intended for the use in isolated lab environments for space saving purposes only.
@@ -112,37 +111,20 @@ Stop-Service wuauserv -Force
 Restart-Computer
 ```
 2. Missing DNS settings on these Windows hosts with static IP addresses
-    - LeftHost, SmartConsole, DMZSRV do not have DSN configured
+    - LeftHost, SmartConsole, DMZSRV do not have DNS configured
+    - The official repo has been updated to set DNS
     - RightHost is set with DNS server 9.9.9.9
-Run the following powershell command on each server, or add to each Window server's PS1 file (addcdns commmands already include this)
+Run the following powershell command on each server (addcdns commmands already included this)
 ```
 Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses 10.20.20.10
 ```
 ## Preparing Active Directory and the domain controller pp.139-143
 1. Consider increasing vPCU and RAM on the ADDCDNS VM
-2. Page 139 step 7 has code that does not exist in the Github repository.
+2. Page 139 step 7 has code that was later added to the Github repository.
     - The following are the two files that can be created and added to the Scripts folder
+        - `addcdns.bat`
+        - `addcdns.ps1`
     - Don't forget to rename the system to ADDCDNS and reboot before runnning the script
-
-addcdns.bat
-```
-powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command (F:\Scripts\addcdns.ps1)"
-```
-addcdns.ps1
-```
-Get-ScheduledTask -TaskName ServerManager | Disable-ScheduledTask -Verbose
-$WindowsUpdate = "Scheduled Start"
-Get-ScheduledTask -TaskName $WindowsUpdate | Disable-ScheduledTask  -Verbose
-Get-ScheduledTask -TaskName StartComponentCleanUp | Disable-ScheduledTask  -Verbose
-Get-Service -Name wuauserv | set-service -StartupType  Disabled -Confirm:$false
-Get-Service -Name MapsBroker | set-service -StartupType  Disabled -Confirm:$false
-Get-Service -Name gupdate | set-service -StartupType  Disabled -Confirm:$false
-Stop-Service wuauserv -Force
-New-NetIPAddress -IPAddress 10.20.20.10 -DefaultGateway 10.20.20.1 -PrefixLength 24 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
-Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses 10.20.20.10
-Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools
-Install-ADDSForest -DomainName mycp.lab -DomainNetBIOSName AD -InstallDNS
-```
 ## Preparing cloned Check Point hosts pp. 143-145
 1. The updated repo script now increases CPSMS RAM to 6GB
     - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
