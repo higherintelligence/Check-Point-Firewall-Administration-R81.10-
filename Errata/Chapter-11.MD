@@ -35,10 +35,18 @@
 1. User will need to power om DMZSRV for the first time. While the 1 vCPU maxxed out a lot, it is survivable.
 2. Rule 17 has an incorrect rule name. It should be "Internal1 network to DMZ Accept"
 ## Missing policy push and connectivity testing 9.436
-1. Recommend after configuring DDMZ access rules to:
+1. Recommend after configuring DMZ access rules to:
+    - create internet access rule under APCL & URL, Content Awareness Inline Layer
+        - Name: APCL_URLF_PArent Rule
+        - Source: Int_Nets
+        - Destination: ExternalZone
+        - Services: *Any
+        - Action: Allow
+        - Track: Log
     - push policy
-    - power on LeftHost and browse to http://10.30.30.10
-TO DO see about testing internet access
+    - power on LeftHost and browse to http://10.30.30.10 on  DMZSRV
+        - note that the DMZSRV really strugged with one (1) vCPU; better with two
+    - test internet access to google.com from SmartConsole and LeftHost
 ## Configuring rules for access to updatable objects pp. 436-437
 1. Importing updatable objects requires Internet access, which is not yet working
     - no firewall push (the first push is on page 444, without much explanation)
