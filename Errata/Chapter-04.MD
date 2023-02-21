@@ -18,7 +18,12 @@ Ensure you are using the latest scripts downloaded from the official repo. These
 ## Windows Server base image scripted pp. 110-111
 1. Page 110 step 1. says to run the command "from an elevated Command Prompt." If you fail to do this, the VM will fail to boot with Windows Setup message "Windows cannot find the Microsoft License Terms. Make sure the installation source are valid and restart the installation."
     - building using the UI does not have this problem
-2. `create_WINBASE.bat` has an extraneous slash one line 20 for hostpath
+2. The book does not mention it, but you will want to install software the same as page 109 step 22
+    - PuTTY
+    - WinSCP
+    - Chrome
+    - Notepad++
+4. `create_WINBASE.bat` has an extraneous slash one line 20 for hostpath
 
 Reproducing issue error message:
 ```
