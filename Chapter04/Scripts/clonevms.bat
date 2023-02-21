@@ -111,7 +111,3 @@ VBoxManage modifyvm "CPGW" --macaddress2 auto
 VBoxManage modifyvm "CPGW" --cableconnected2 on
 VBoxManage modifyvm "CPGW" --intnet2 Net_200.200.0.0
 VBoxManage list vms
-
-
-
-
