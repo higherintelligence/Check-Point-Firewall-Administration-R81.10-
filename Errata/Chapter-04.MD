@@ -80,7 +80,7 @@ VBoxManage storageattach %VM% --storagectl "SATA" --port 2 --device 0 --medium e
 VBoxManage snapshot %VM% take "Snapshot 1" --description "Do NOT delete!!! This snapshot is used to spawn the linked clones of all Windows components in the lab."
 ```
 
-TODO After testing the fix Licensing Boot Fix, test and post a working `eject_and_snapshot_WINBASE.bat`. (want to confirm supporting both build methods)
+Need to double check this version works with both manual GUI and scripted builds.
 
 ## Creating a Check Point base VM pp. 113-123
 1. Inconsistent naming of the Check Point base VM causes problems
@@ -96,10 +96,11 @@ TODO After testing the fix Licensing Boot Fix, test and post a working `eject_an
 4. Page 121 figure 4.33 has a small error in the screenshot; the mounted ISO file from the previous page is not shown
 ## Check Point base image scripted pp. 123-124
 1. The book script on page 123 has a typo for size: 61,440 should be 61440
-2. The report script create_CPBASE.bat has the wrong size. Instead of 40960 it should be 61440
+2. The report script `create_CPBASE.bat` has the wrong disk size. Instead of 40960 it should be 61440.
 3. Didn't see steps to disable audio or USB controller in the script
     - `vBoxManage modifyvm %VM% --usb off`
     - `vBoxManage modifyvm %VM% --audio none`
+    - Added to this repo; will watch for it to be added to official repo
 ## Creating linked clones pp. 130-131
 1. The commands in the book are wrong, as they repeatedly refer to the single VM "CPCM1"
     - Use the latest script `clonevms.bat` in the repo
