@@ -98,8 +98,8 @@ Need to double check this version works with both manual GUI and scripted builds
 1. The book script on page 123 has a typo for size: 61,440 should be 61440
 2. The report script `create_CPBASE.bat` has the wrong disk size. Instead of 40960 it should be 61440.
 3. Didn't see steps to disable audio or USB controller in the script
-    - `vBoxManage modifyvm %VM% --usb off`
-    - `vBoxManage modifyvm %VM% --audio none`
+    - `VBoxManage modifyvm %VM% --usb off`
+    - `VBoxManage modifyvm %VM% --audio none`
     - Added to this repo; will watch for it to be added to official repo
 ## Creating linked clones pp. 130-131
 1. The commands in the book are wrong, as they repeatedly refer to the single VM "CPCM1"
