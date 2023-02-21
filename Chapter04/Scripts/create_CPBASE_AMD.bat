@@ -12,6 +12,8 @@ VBoxManage storageattach %VM% --storagectl "IDE" --port 0 --device 0 --type dvdd
 VBoxManage storagectl %VM% --name "SATA" --add SAS --controller LsiLogicSas
 VBoxManage storageattach %VM% --storagectl "SATA" --port 0 --device 0 --type hdd --medium %VM%.vdi
 VBoxManage modifyvm %VM%  --boot1 disk --boot2 DVD --boot3 none --boot4 none
+VBoxManage modifyvm %VM% --usb off
+VBoxManage modifyvm %VM% --audio-driver none
 VBoxManage modifyvm %VM% --cpus 4
 VBoxManage modifyvm %VM% --memory 4096 --vram 128
 VBoxManage modifyvm %VM% --hwvirtex on
