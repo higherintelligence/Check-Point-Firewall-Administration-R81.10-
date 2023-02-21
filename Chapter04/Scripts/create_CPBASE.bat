@@ -7,6 +7,8 @@ VBoxManage storagectl %VM% --name "IDE" --add IDE --controller PIIX4
 VBoxManage storageattach %VM% --storagectl "IDE" --port 0 --device 0 --type dvddrive --medium "C:\CPBook\LabShare\ISOs_and_OVAs\CPBASEEVAL.iso"
 VBoxManage storagectl %VM% --name "SATA" --add SAS --controller LsiLogicSas
 VBoxManage storageattach %VM% --storagectl "SATA" --port 0 --device 0 --type hdd --medium %VM%.vdi
+VBoxManage modifyvm %VM% --usb off
+VBoxManage modifyvm %VM% --audio none
 VBoxManage modifyvm %VM% --cpus 4
 VBoxManage modifyvm %VM% --ioapic on
 VBoxManage modifyvm %VM% --paravirtprovider none
