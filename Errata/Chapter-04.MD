@@ -23,7 +23,7 @@ Ensure you are using the latest scripts downloaded from the official repo. These
     - WinSCP
     - Chrome
     - Notepad++
-4. `create_WINBASE.bat` has an extraneous slash one line 20 for hostpath
+4. `create_WINBASE.bat` has an extraneous slash on line 20 for hostpath
 
 Reproducing issue error message:
 ```
