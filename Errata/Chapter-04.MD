@@ -87,13 +87,19 @@ TODO After testing the fix Licensing Boot Fix, test and post a working `eject_an
     - Page 114 instructs to name it `CPBASE` and shows this in the screenshot
     - Page 117 shows a different name `CPBASE1`
     - The official code respository script  `eject_and_snapshot_CPBASE.bat` has the corrected code
-2. Number of CPU cores and RAM not explained
+2. Number of CPU cores and RAM explained
      - 2 cores minimum, 4 cores is recommended for CPSMS
      - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
      - The updated repo now provisions 6GB RAM for CPSMS
 3. Book was written with AMD processors in mind, not Intel processors
     - Page 118 instructs checking `VT-x/AMD-V`, which is not available on systems using Intel CPUs
 4. Page 121 figure 4.33 has a small error in the screenshot; the mounted ISO file from the previous page is not shown
+## Check Point base image scripted pp. 123-124
+1. The book script on page 123 has a typo for size: 61,440 should be 61440
+2. The report script create_CPBASE.bat has the wrong size. Instead fo 40960 it should be 61440
+3. Didn't see steps to disable audio or USB controller in the script
+    - `vBoxManage modifyvm %VM% --usb off`
+    - `vBoxManage modifyvm %VM% --audio none1
 ## Creating linked clones pp. 130-131
 1. The commands in the book are wrong, as they repeatedly refer to the single VM "CPCM1"
     - Use the latest script `clonevms.bat` in the repo
