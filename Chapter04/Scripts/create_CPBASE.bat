@@ -1,7 +1,7 @@
 SET PATH=%PATH%;C:\Program Files\Oracle\VirtualBox
 SET VM=CPBASE
 REN C:\CPBook\LabShare\ISOs_and_OVAs\Check_Point_R81.10_*.iso CPBASEEVAL.iso
-VBoxManage createhd --filename %VM%.vdi --size 40960
+VBoxManage createhd --filename %VM%.vdi --size 61440
 VBoxManage createvm --name %VM% --ostype RedHat_64 --register
 VBoxManage storagectl %VM% --name "IDE" --add IDE --controller PIIX4
 VBoxManage storageattach %VM% --storagectl "IDE" --port 0 --device 0 --type dvddrive --medium "C:\CPBook\LabShare\ISOs_and_OVAs\CPBASEEVAL.iso"
