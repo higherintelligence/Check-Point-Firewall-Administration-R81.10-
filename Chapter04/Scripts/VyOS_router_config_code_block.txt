@@ -28,7 +28,6 @@ config
 
 #At vyos@router# prompt, copy and paste this codeblock:
 
-
 set interfaces ethernet eth0 description 'OUTSIDE'
 set interfaces ethernet eth1 address '200.100.0.254/24'
 set interfaces ethernet eth1 description 'Net_200.100.0.0'
