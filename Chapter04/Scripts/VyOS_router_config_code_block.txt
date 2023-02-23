@@ -3,6 +3,7 @@
 # via VirtualBox console for this VM
 # type the following lines pressing Enter after each:
 
+configure
 set interfaces ethernet eth0 address dhcp
 set service ssh
 commit
