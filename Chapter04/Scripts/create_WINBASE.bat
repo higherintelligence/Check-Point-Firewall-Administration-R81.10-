@@ -29,4 +29,3 @@ VBoxManage unattended install %VM% --iso=C:\CPBook\LabShare\ISOs_and_OVAs\WINBAS
 VBoxManage sharedfolder add %VM% --name "Labshare" --hostpath C:\CPBook\LabShare --automount --auto-mount-point F:
 VBoxManage startvm %VM% --type gui
 CD C:\CPBook\LabShare\Scripts\
-
