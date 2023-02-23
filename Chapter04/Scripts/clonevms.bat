@@ -21,20 +21,23 @@ VBoxManage modifyvm "DMZSRV" --macaddress1 auto
 VBoxManage modifyvm "DMZSRV" --cableconnected1 on
 VBoxManage modifyvm "DMZSRV" --intnet1 Net_10.30.30.0
 VBoxManage clonevm WINBASE --snapshot "Snapshot 1" --options link --name ADDCDNS --register
+VBoxManage modifyvm ADDCDNS --cpus 2
+VBoxmanage modifyvm "ADDCDNS" --memory 2048 --vram 128
 VBoxManage modifyvm "ADDCDNS" --nic1 intnet
 VBoxManage modifyvm "ADDCDNS" --nictype1 82540EM
 VBoxManage modifyvm "ADDCDNS" --macaddress1 auto
 VBoxManage modifyvm "ADDCDNS" --cableconnected1 on
 VBoxManage modifyvm "ADDCDNS" --intnet1 Net_10.20.20.0
 VBoxManage clonevm WINBASE --snapshot "Snapshot 1" --options link --name SmartConsole --register
-VBoxmanage modifyvm "SmartConsole" --memory 4096  --vram 128
+VBoxManage modifyvm "SmartConsole" --cpus 2
+VBoxmanage modifyvm "SmartConsole" --memory 4096 --vram 128
 VBoxManage modifyvm "SmartConsole" --nic1 intnet
 VBoxManage modifyvm "SmartConsole" --nictype1 82540EM
 VBoxManage modifyvm "SmartConsole" --macaddress1 auto
 VBoxManage modifyvm "SmartConsole" --cableconnected1 on
 VBoxManage modifyvm "SmartConsole" --intnet1 Net_10.0.0.0
 VBoxManage clonevm CPBASE --snapshot "Snapshot 1" --options link --name CPSMS --register
-VBoxmanage modifyvm "CPSMS" --memory 6144  --vram 128
+VBoxmanage modifyvm "CPSMS" --memory 6144 --vram 128
 VBoxManage modifyvm "CPSMS" --nic1 intnet
 VBoxManage modifyvm "CPSMS" --nictype1 82540EM
 VBoxManage modifyvm "CPSMS" --macaddress1 auto
