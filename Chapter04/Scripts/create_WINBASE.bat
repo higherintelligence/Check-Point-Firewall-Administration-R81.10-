@@ -11,8 +11,8 @@ VBoxManage storagectl %VM% --name "SATA Controller" --add sata --controller Inte
 VBoxManage storageattach %VM% --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium %VM%.vdi
 VBoxManage storageattach %VM% --storagectl "SATA Controller" --port 1 --device 0 --type dvddrive --medium emptydrive
 VBoxManage modifyvm %VM%  --boot2 disk --boot1 dvd --boot3 none --boot4 none
-VBoxManage modifyvm %VM% --cpus 2
-VBoxManage modifyvm %VM% --memory 2048 --vram 128
+VBoxManage modifyvm %VM% --cpus 1
+VBoxManage modifyvm %VM% --memory 1024 --vram 128
 VBoxManage modifyvm %VM% --nested-hw-virt on
 VBoxManage modifyvm %VM% --pae off
 VBoxManage modifyvm %VM% --ioapic on
