@@ -19,6 +19,10 @@ vCPU
 |---|---|---|---|
 | Total                    |        |         |      24 |
 
+>>From the book author: There is little point in counting total number of vCores- so long
+>>as we have at least 4 physical cores with hyperthreading (8 total), the pool of cores is 
+>>sufficient for the lab. vCPUs are not reserved exclusively by VMs.
+
 RAM
 |  VM           |  RAM GB  |
 |---|---:|
@@ -46,6 +50,10 @@ Disk
 |---|---|---|---|
 | Total                 |           |         |  448 GB |
 
+>>From the book author: These disk calculations are inacurate- since we are using Linked Clones, only
+>>the router, CPBASE and WINBASE disks are fully provisioned. Remaining VMs write only Diffs for the
+>>XXbase.vdi files. 
+
 Comparing this to my test system, HP Omen laptop:
     - RAM: 32GB
     - Processor: Intel® Core™ i7-12700H Processor
@@ -55,6 +63,9 @@ Comparing this to my test system, HP Omen laptop:
         - Total threads: 20
 
 Leaves 4GB for the host and 4 threads short.
+>>From the book author: There is no shortaghe of threads- CPU core allocation works differently from that of memory allocation.
+>>Instructions from VMs are queued to the pool of all available cores on LabHost PCand are executed when necessary 
+>>number of cores becomes available. 
 
 ## Usability
 1. Increase the default font size in putty
