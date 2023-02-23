@@ -4,12 +4,12 @@ Ensure you are using the latest scripts downloaded from the official repo. These
 ## Creating a Windows Server base VM in the GUI pp. 99-109
 1. Different user interface from what is pictured when configuring the VM
     - This is due to changes in the VirtualBox UI
-2. Number of CPU cores and RAM not explained
+2. Number of CPU cores and RAM not explained in the book
     - The amount of RAM specified, 2GB is sufficient for a basic Windows server with the following notes:
       - the clone script gives 4GB RAM to SmartConsole VM
     - The book does not address how many CPU cores to assign for the Windows VMs. You can safely default to 1 core for the servers with the following notes:
-      - increase the number of cores to 4 for the SmartConsole VM later
-      - increase the number of cores to at least 2 for ADDCDNS later (will use in chapter 11, page 432)
+      - increase the number of cores to 2 for the SmartConsole VM later
+      - increase the number of cores to for ADDCDNS later (will use in chapter 11, page 432)
 3. Figure 4.13 shows an incorrect Folder Path.
     - Folder path: C:\CPBook\LabShare
 5. Unclear what password to use Administrator p. 106
