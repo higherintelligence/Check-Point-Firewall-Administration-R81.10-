@@ -9,7 +9,7 @@ VBoxManage storageattach %VM% --storagectl "SATA Controller" --port 1 --device 0
 VBoxManage modifyvm %VM% --ioapic on
 VBoxManage modifyvm %VM%  --boot2 disk --boot1 dvd --boot3 none --boot4 none
 VBoxManage modifyvm %VM% --memory 1024 --vram 128
-VBoxManage modifyvm %VM% --nic1 Net_DeadEnd
+VBoxManage modifyvm %VM% --nic1 intnet
 VBoxManage modifyvm %VM% --nictype1 82540EM
 VBoxManage modifyvm %VM% --macaddress1 auto
 VBoxManage modifyvm %VM% --cableconnected1 on
