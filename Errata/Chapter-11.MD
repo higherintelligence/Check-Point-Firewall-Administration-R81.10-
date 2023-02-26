@@ -40,7 +40,7 @@
 ## Missing policy push and connectivity testing p.436
 1. Recommend after configuring DMZ access rules to:
     - create internet access rule under APCL & URL, Content Awareness Inline Layer
-        - Name: APCL_URLF_PArent Rule
+        - Name: APCL_URLF_Parent Rule
         - Source: Int_Nets
         - Destination: ExternalZone
         - Services: *Any
@@ -58,6 +58,12 @@
     - the action will fail, so the recommendation is to disable this incomplete rule for now
     - see workaround above, "Missing policy push and connectivity testing"; in our testing it still failed
     - See sk122636 for troubleshooting this issue
+    - as a workaround, add the domains listed on page 231 for CPUSE
+        - .updates.checkpoint.com
+        - .updates.g01.checkpoint.com
+        - .gwevents.checkpont.com
+        - .gwevents.us.checkpont.com
+        - .deploy.static.akamaitechnologies.com
 ## Configuring the HTTPS Inspection p. 444
 1. Importing updatable objects requires Internet access, which is not yet working
     - no firewall push (the first push is at the bottom of this page without much explanation)
