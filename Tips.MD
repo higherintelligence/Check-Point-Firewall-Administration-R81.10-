@@ -56,6 +56,10 @@ Comparing this to my test system, HP Omen laptop:
 
 Leaves 4GB for the host and 4 threads short.
 
+## Windows Sessions Manager Crashing
+1. Symptoms: screen goes black, evenually logs out
+    - If you scripted WINBASE, try re-installing Guest Additions using the Guest Additions CD Image; see pages 107-108
+
 ## Usability
 1. Increase the default font size in putty
     - launch putty
