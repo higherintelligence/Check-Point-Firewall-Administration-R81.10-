@@ -41,3 +41,10 @@ set expert-password
         - CPD_amon (tcp/18192)
         - FW1 (tcp/256)
         - FW1_ica_push (tcp/18211)
+    - Later on page 469 step 1, also remove the temporary rule 2 that was created
+4. Page 471 figure 12.5 is incorrect if it was cloned using clonevms.bat from the repo and the configuration fixed (see above) to work
+    - eth0 topology is Internal
+    - eth1 topology is External
+5. Page 472 steps 9 and 10 likewise don't match clonevms.bat from the repo
+    - step 9 should be double-click eth1, modify topology, ExternalZone
+    - step 10 should be double-click eth0, modify topology, override, network defined by the interface IP and Net Mask, enable Anti-Spoofing
