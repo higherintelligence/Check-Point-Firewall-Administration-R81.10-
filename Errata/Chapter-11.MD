@@ -28,6 +28,7 @@
         - Activate the scope, Finish
 2. The server ADDCDNS really struggles with 1 vCPU and 2GB RAM. It hard pegs at 100% CPU and is unresponsive.
     - Power it off and set to 2vCPU and 4GB RAM for better performance
+3. See [resources online](https://www.technig.com/install-and-configure-dhcp-using-powershell-in-windows-server-2022/) if you are interested in scripting the enabling and configuration of DHCP
 ## Configuring rules for privileged access pp. 434-435
 1. Figure 11.7 shows the object "Router", but the objects created are actually "RouterLeft"and "RouterRight"
 2. Figure 11.7 show an incorrect rule  name, should be something like "Block RDP non-admins Drop."
