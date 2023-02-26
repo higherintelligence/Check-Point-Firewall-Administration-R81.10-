@@ -31,7 +31,7 @@ add allowed-client host ipv4-address 10.0.0.20
 add allowed-client host ipv4-address 200.100.0.20
 delete allowed-client host any-host
 set expert-password
-``
+```
 2. Page 468 step 3 has the wrong IP address for the router. Instead, the book has the user ping the firewall's own IP address
     - `ping 200.200.0.254`
 3. Page 450 step 5 fails
