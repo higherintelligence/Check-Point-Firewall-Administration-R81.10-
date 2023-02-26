@@ -100,10 +100,6 @@ Need to double check this version works with both manual GUI and scripted builds
     - `VBoxManage modifyvm %VM% --usb off`
     - `VBoxManage modifyvm %VM% --audio none`
     - Added to this repo; will watch for it to be added to official repo
-## Creating linked clones pp. 130-131
-1. The commands in the book are wrong, as they repeatedly refer to the single VM "CPCM1"
-    - Use the latest script `clonevms.bat` in the repo
-    - The author updated this script in the repo to give 4GB RAM to the SmartConsole VM
 ## Preparing cloned Windows hosts pp.134-138
 1. The book has the correct LeftHost.ps1 commands. The repo script has been updated with the correct commands.
 The following is the correct script from the book, reformatted to match the other scripts:
