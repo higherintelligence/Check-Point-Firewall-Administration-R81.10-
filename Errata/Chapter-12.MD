@@ -34,3 +34,6 @@ set expert-password
 ``
 2. Page 468 step 3 has the wrong IP address for the router. Instead, the book has the user ping the firewall's own IP address
     - `ping 200.200.0.254`
+3. Page 450 step 5 fails
+    - Logs show failed communications on CPCXL from CPSMS to CPGW_tmp on tcp ports 18191 and 18211
+    - It's best that as part of page 468 step 1 to create a new rule 2 to allow CPSMS to CPGW_tmp for services CPD (tcp/19191) and FW1_ica_push (tcp/18211)
