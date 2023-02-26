@@ -82,7 +82,9 @@
     - this does not work correctly until the policy is pushed
     - there is a certificate error; the previously installed certificates didn't resolve this
 ## Creating and using access roles pp. 459-460
-1. If you have issus loading the AD objects on page 460, try closing out of SmartConsole, then try again
+1. If you have issus loading the AD objects on page 460
+    - try closing out of SmartConsole, then try again
+    - make sure ADDCDNS is up and responding
 ## Testing access role-based rules pp. 461-464
 1. If your connection from SmartConsole as user `itadmin` can access facebook initially
     - continue testing and come back to re-test `itadmin` on SmartConsole with facebook later. It does work, if not right away
