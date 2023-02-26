@@ -61,15 +61,14 @@ VBoxManage unattended install %VM% --iso=C:\CPBook\LabShare\ISOs_and_OVAs\WINBAS
 VBoxManage startvm %VM% --type gui
 ```
 ## Finalizing the Windows Server base VM installation pp. 112-113
-1. Perhaps not necessary, ejecting the Guest Additons CD image is a good best practice here
-2. Step 2 powershell.exe example is has the incorrect name for the powershell script
+1. Step 2 powershell.exe example is has the incorrect name for the powershell script
     - the trailing double quote (") is REQUIRED
     - should be `powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command (F:\Scripts\sysprep_for_WINBASE.ps1)"`
     - the batch file `WINBASE_sysprep.bat` calls the powershell script correctly
-4. Step 3 provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
+2. Step 3 provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
     - Initial testing had the VM mostly working when ignoring this error
     - Created a corrected script and works well. Creates the Floppy storage and uses the correct storage name.
-5. Step also references `eject_and_snapshot_WINBASE.bat`. This script needs to be corrected as well IF you manually set up base base image using the UI. The script needs to be AS IS if you built with `create_WINBASE.bat`.
+3. Step also references `eject_and_snapshot_WINBASE.bat`. This script needs to be corrected as well IF you manually set up base base image using the UI. The script needs to be AS IS if you built with `create_WINBASE.bat`.
 ```
 SET PATH=%PATH%;C:\Program Files\Oracle\VirtualBox
 SET VM=WINBASE
@@ -142,4 +141,4 @@ Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -Serv
     - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
 ## Preparing SmartConsole pp. 145-146
 1. Consider adding vCPUs to SmartConsole VM
-1. Typo in step 4; the IP address of CPCM1 should be `10.0.0.2`
+2. Typo in step 4; the IP address of CPCM1 should be `10.0.0.2`
