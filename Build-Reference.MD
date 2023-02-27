@@ -28,6 +28,6 @@ The steps to build the lab are dispersed through the book. This page reference s
 | HTTPS inspection                              |                    441-453 |
 | Identity awareness                            |                    453-464 |
 | Add users to AD for Identity Awareness        |                        454 |
-| Configure remote gateway for VPN              |                    467-486 |
-
+| Configure CPGW                                |                    467-474 |
+| Configure CPGW for VPN                        |                    467-486 |
 more steps to add
