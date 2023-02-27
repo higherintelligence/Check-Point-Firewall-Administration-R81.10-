@@ -3,8 +3,10 @@
 ## Deploying the access control policy structure p. 428
 1. The stealth rule showed only protects the physical IP address of the clutser member. The reference to Chapter 8 page 326 shows an ambiguous group named "CP_Gateways".
     - some administrators also block all traffic to the firewall cluster IP address while explicity allowing ping or perhaps traceroute just above it
+>>From the author: Generally, if the cluster is present, you may want to allow access to vIPs in order to facilitate Remote Access VPN and browser-based authnetication.
 ## Configuring DHCP on Windows Server p. 432
 1. If the "Server Manager App" does not open automatically, user may feel lost installing DHCP and configuring a DHCP scope. Search the Start menu for Add Rules and Features doesn't return anything useful.
+>>From the autor: I'll re-enable the Server Manager on ADDCDNS in addcdns_step2.bat script. The rest of your comments are valid
     - Start Server Manager
     - Add roles or features
         - next, next, select ADDDCDNS and click Next
@@ -33,12 +35,17 @@
     - this is a good time to go back and configure CPCM2 time settings too
 ## Configuring rules for privileged access pp. 434-435
 1. Figure 11.7 shows the object "Router", but the objects created are actually "RouterLeft"and "RouterRight"
+>>From the author: user RouterLeft in the rules pictured in Figure 11.7 – Privileged access rules for the lab.
 2. Figure 11.7 show an incorrect rule  name, should be something like "Block RDP non-admins Drop."
+>>From the author: keeping with naming convention, we may call it "Non-Admins RDP Drop."
 ## Configuring DMZ access rules p. 436
 1. User will need to power om DMZSRV for the first time. While the 1 vCPU maxxed out a lot, it is survivable.
-2. Rule 17 has an incorrect rule name. It should be "Internal1 network to DMZ Accept"
+>>From the author: As of latest clonevms.bat, all windows servers getting 2 vCPUs.
+3. Rule 17 has an incorrect rule name. It should be "Internal1 network to DMZ Accept"
+>>From the author: You are correct.
 ## Missing policy push and connectivity testing p.436
 1. Recommend after configuring DMZ access rules to:
+>>From the author: I am refraining from the wide-open rules on purpose: Teaching FW admins to start with internal to any any accept is immediatelly opening you up for compromize. If you want to keep access to DMZ, it is fine.
     - create internet access rule under APCL & URL, Content Awareness Inline Layer
         - Name: APCL_URLF_Parent Rule
         - Source: Int_Nets
@@ -64,7 +71,9 @@
         - .gwevents.checkpont.com
         - .gwevents.us.checkpont.com
         - .deploy.static.akamaitechnologies.com
+  >>From the author: Valid point about updatable objects. I suggest simpler approach: Create a rule CPSMS to ExternalZone HTTP/HTTPS Accept Log. Publish changes and install the policy. Once the policy is installed, CPSMS will be able to get the Updatable objects and we may change this same rule by adding SmartConsole to the Source and replacing ExternalZone with Check Point Services. Publishing and installing the policy.
 ## Configuring the HTTPS Inspection p. 444
+>>From the author: The suggestion to your previous point should address the issues listed here.
 1. Importing updatable objects requires Internet access, which is not yet working
     - no firewall push (the first push is at the bottom of this page without much explanation)
     - the action will fail, so the recommendation is to disable this incomplete rule for now
@@ -76,11 +85,14 @@
     - the policy installation should succed and the status icon should turn from red circle with a white X to a green circle with a white check
 ## Distributing and installing the outbound CA and ICA certificates to the client machines pp. 445-453
 1. Minor formatting in second paragraph. The name of the VM is SmartConsole; the object name is SmartConsole_VM.
+>>From the author: The best I could do to differentiate between VM and its namesake application.
 2. The book instructs the user to browse to the Internet. With the notes provided, this should be working perfectly.
 ## Enabling Identity Awareness and browser-based authentication pp. 455-459
 1. Page 459 paragraph directs the user to access to access https://200.100.0.1/connect, but there are two issues
     - this does not work correctly until the policy is pushed
+    >>From the Author: You are correct- On top of Page 459, seconds sentence should read: Publich changes and install the policy. 
     - there is a certificate error; the previously installed certificates didn't resolve this
+    >>From the author: does the policy installation resolved cert issue you are describing?
 ## Creating and using access roles pp. 459-460
 1. If you have issus loading the AD objects on page 460
     - try closing out of SmartConsole, then try again
