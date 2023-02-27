@@ -64,5 +64,9 @@ set expert-password
     - Leave at the default value "MAC address for DHCP allocation" did not seem to break anything
 ## Configuring acces control policy rules for remote access pp. 497-499
 1. Page 499 step 1 discusses replacing the "Int_Nets" object; this is actually the "Any" object since the parent rule already is limited to Int_Nets
-    - Add "RA_Role" to the parent rule
+    - Cannot add "RA_Role" to the parent rule (not compatible)
+    - Add Net_192.168.254.0 to the parent rule
     - Follow the book's instructions, understanding instead of "Int_Nets" you will see "Any"
+2. Step 4 says to install the policy; it does not warn the users of the warning message that is displayed
+    - "You are about to override the current policy with "LeftSide_RA" for these gateways:" is expected
+    - click Install
