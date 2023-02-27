@@ -70,3 +70,7 @@ set expert-password
 2. Step 4 says to install the policy; it does not warn the users of the warning message that is displayed
     - "You are about to override the current policy with "LeftSide_RA" for these gateways:" is expected
     - click Install
+## Preparing remote client pp. 500-506
+1. On page 500, under Preparing Remote client, the second paragraph has the user change DNS to 9.9.9.9 and test accessing websites. This will not work because the site-to-site (S2S) VPN tunnel is still active and the traffic is being backhauled and the CPCXL policy is being applied.
+    - Modify the "Branchees" community, VPN Routing, set to "To center only"
+    - Publish changes, and push both policies (LeftSide_RA and RightSide)
