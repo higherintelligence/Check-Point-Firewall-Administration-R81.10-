@@ -50,5 +50,6 @@ set expert-password
     - step 9 should be double-click eth1, modify topology, ExternalZone
     - step 10 should be double-click eth0, modify topology, override, network defined by the interface IP and Net Mask, enable Anti-Spoofing
 ## Star community - To center or through the center to other satellites, to Internet and other VPN targets pp. 479-483
-1. Page 480 step 4 states that Internet traffic from RightHost should be working; it is not working
+1. Page 480 step 4 states that Internet traffic from RightHost should be working; it does not work
     - Update the APCL_URLF_Parent rule by adding Net_172.16.16.0 to source column, and push LeftSide_S2S policy
+2. Step 6 is mising publishing and isntalling the LeftSide_S2S policy
