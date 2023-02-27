@@ -59,6 +59,10 @@ set expert-password
 ## Changing portals' URLs and renewing a gateway cluster certificate pp.483-486
 1. Page 485 step 3 will trigger an 'Are you sure?' warning
     - Click Yes to continue.
-## Configuring a gateway or cluster for remote access pp.489-492
+## Configuring a gateway or cluster for remote access pp. 489-492
 1. Page 491 step 7 provides instructions that leave the setting "MAC address for DHCP allocation" at the default; Figure 12.24 has it set to "Calculated per user name"
     - Leave at the default value "MAC address for DHCP allocation" did not seem to break anything
+## Configuring acces control policy rules for remote access pp. 497-499
+1. Page 499 step 1 discusses replacing the "Int_Nets" object; this is actually the "Any" object since the parent rule already is limited to Int_Nets
+    - Add "RA_Role" to the parent rule
+    - Follow the book's instructions, understanding instead of "Int_Nets" you will see "Any"
