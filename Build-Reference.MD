@@ -30,4 +30,6 @@ The steps to build the lab are dispersed through the book. This page reference s
 | Add users to AD for Identity Awareness        |                        454 |
 | Configure CPGW                                |                    467-474 |
 | Configure CPGW for VPN                        |                    467-486 |
+| Remote Access VPN                             |                    487-508 |
+
 more steps to add
