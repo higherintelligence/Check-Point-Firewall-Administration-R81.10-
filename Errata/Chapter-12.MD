@@ -52,8 +52,13 @@ set expert-password
 ## Star community - To center or through the center to other satellites, to Internet and other VPN targets pp. 479-483
 1. Page 480 step 4 states that Internet traffic from RightHost should be working; it does not work
     - Update the APCL_URLF_Parent rule by adding Net_172.16.16.0 to source column, and push LeftSide_S2S policy
-2. Step 6 is mising publishing and isntalling the LeftSide_S2S policy
-3. Page 481 last paragraph says to "SSH into CPGW". This is not possible from SmartConsole since page 469 step 1 removes CPGW_tmp and nowhere does it state with what to replace it
+2. Step 6 is mising publishing and installing the LeftSide_S2S policy
+    - Publish all changes and intall LeftSide_S2S policy
+4. Page 481 last paragraph says to "SSH into CPGW". This is not possible from SmartConsole since page 469 step 1 removes CPGW_tmp and nowhere does it state with what to replace it
     - In LeftSite_S2S policy rule one, add "CPGW" to the destination. Publish and install policy to allow SSH to CPGW
-## Changing portals' URLs and renewing a gateway cluster certificate
-1. Page 485 step 3 will trigger an 'Are you sure?' warning. Click Yes to continue.
+## Changing portals' URLs and renewing a gateway cluster certificate pp.483-486
+1. Page 485 step 3 will trigger an 'Are you sure?' warning
+    - Click Yes to continue.
+## Configuring a gateway or cluster for remote access pp.489-492
+1. Page 491 step 7 provides instructions that leave the setting "MAC address for DHCP allocation" at the default; Figure 12.24 has it set to "Calculated per user name"
+    - Leave at the default value "MAC address for DHCP allocation" did not seem to break anything
