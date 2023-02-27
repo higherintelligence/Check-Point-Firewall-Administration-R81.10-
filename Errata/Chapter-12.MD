@@ -53,3 +53,5 @@ set expert-password
 1. Page 480 step 4 states that Internet traffic from RightHost should be working; it does not work
     - Update the APCL_URLF_Parent rule by adding Net_172.16.16.0 to source column, and push LeftSide_S2S policy
 2. Step 6 is mising publishing and isntalling the LeftSide_S2S policy
+3. Page 481 last paragraph says to "SSH into CPGW". This is not possible from SmartConsole since page 469 step 1 removes CPGW_tmp and nowhere does it state with what to replace it
+    - In LeftSite_S2S policy rule one, add "CPGW" to the destination. Publish and install policy to allow SSH to CPGW
