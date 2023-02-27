@@ -55,3 +55,5 @@ set expert-password
 2. Step 6 is mising publishing and isntalling the LeftSide_S2S policy
 3. Page 481 last paragraph says to "SSH into CPGW". This is not possible from SmartConsole since page 469 step 1 removes CPGW_tmp and nowhere does it state with what to replace it
     - In LeftSite_S2S policy rule one, add "CPGW" to the destination. Publish and install policy to allow SSH to CPGW
+## Changing portals' URLs and renewing a gateway cluster certificate
+1. Page 485 step 3 will trigger an 'Are you sure?' warning. Click Yes to continue.
