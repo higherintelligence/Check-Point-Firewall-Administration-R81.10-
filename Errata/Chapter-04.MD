@@ -18,6 +18,7 @@ Ensure you are using the latest scripts downloaded from the official repo. These
 ## Windows Server base image scripted pp. 110-111
 1. Page 110 step 1. says to run the command "from an elevated Command Prompt." If you fail to do this, the VM will fail to boot with Windows Setup message "Windows cannot find the Microsoft License Terms. Make sure the installation source are valid and restart the installation."
     - building using the UI does not have this problem
+>>From the author: new unattended_swap.bat script contains error check with prominent message, when executed in non-elevated command prompt.
 2. The book does not mention it, but you will want to install software the same as page 109 step 22. If the F: Labshare drive can't be found, reboot the VM again
     - PuTTY
     - WinSCP
@@ -60,11 +61,15 @@ VBoxManage modifyvm %VM% --pae off
 VBoxManage unattended install %VM% --iso=C:\CPBook\LabShare\ISOs_and_OVAs\WINBASEEVAL.iso --image-index=2 --user=Administrator --password=CPL@b8110 --install-additions
 VBoxManage startvm %VM% --type gui
 ```
+>>From the author: replaced this command with:
+>>VBoxManage sharedfolder add %VM% --name "Labshare" --hostpath C:\CPBook\LabShare\ --automount --auto-mount-point F:
+>>which does not cause error when executing.
 ## Finalizing the Windows Server base VM installation pp. 112-113
 1. Step 2 powershell.exe example is has the incorrect name for the powershell script
     - the trailing double quote (") is REQUIRED
     - should be `powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command (F:\Scripts\sysprep_for_WINBASE.ps1)"`
     - the batch file `WINBASE_sysprep.bat` calls the powershell script correctly
+>>You are correct- this omission is in the book example only.
 2. Step 3 provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
     - Initial testing had the VM mostly working when ignoring this error
     - Created a corrected script and works well. Creates the Floppy storage and uses the correct storage name.
@@ -80,18 +85,21 @@ VBoxManage snapshot %VM% take "Snapshot 1" --description "Do NOT delete!!! This 
 ```
 
 Need to double check this version works with both manual GUI and scripted builds.
-
+>> From the author: Please check- original script, even when executing with errors, were able to eject all the media mounted in the VMs. In your script, you are modifying VM by adding storage controller only to attempt the floppy ejection.
 ## Creating a Check Point base VM pp. 113-123
 1. Inconsistent naming of the Check Point base VM causes problems
     - Page 114 instructs to name it `CPBASE` and shows this in the screenshot
     - Page 117 shows a different name `CPBASE1`
     - The official code respository script  `eject_and_snapshot_CPBASE.bat` has the corrected code
+>>From the author: My bad- needed additional screenshots and code snippets and ended-up using altered VM name to reproduce the action. 
 2. Number of CPU cores and RAM explained
      - 2 cores minimum, 4 cores is recommended for CPSMS
      - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
      - The updated repo now provisions 6GB RAM for CPSMS
+ >>From the author: cloneVMs now assigning apropriate number of vCPUs and RAM to all components.
 3. Book was written with AMD processors in mind, not Intel processors
     - Page 118 instructs checking `VT-x/AMD-V`, which is not available on systems using Intel CPUs
+ >>This statement is partially incorrect: The labs were modeled on both, Intel and AMD CPUs. VT-x is native Intel technology. The only difference in how AMD vs Intel is treated is in paravirtualization settings of CPBSASE VM and its clones. Fore these VMs running on AMD, paravirtualization is set to "None", whereas for same VMs runing on Intel, it is set to "Default". 
 4. Page 121 figure 4.33 has a small error in the screenshot; the mounted ISO file from the previous page is not shown
 ## Check Point base image scripted pp. 123-124
 1. The book script on page 123 has a typo for size: 61,440 should be 61440
@@ -125,6 +133,7 @@ Run the following powershell command on each server (addcdns commmands already i
 ```
 Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses 10.20.20.10
 ```
+>>From the author: Repo scripts were updated with DNS config line.
 ## Preparing Active Directory and the domain controller pp.139-143
 1. Consider increasing vPCU and RAM on the ADDCDNS VM
 2. Page 139 step 7 has code that was later added to the Github repository.
@@ -132,9 +141,12 @@ Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -Serv
         - `addcdns.bat`
         - `addcdns.ps1`
     - Don't forget to rename the system to ADDCDNS and reboot before runnning the script
+ >>From the author: There are now two pairs of scripts for ADDCDNS host- addcdns_step1 and addcdns_step2. the first one renames and reboots the server, second one, perfoms the AD deployment and reboots server again to complete AD setup.
 ## Preparing cloned Check Point hosts pp. 143-145
 1. The updated repo script now increases CPSMS RAM to 6GB
     - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
 ## Preparing SmartConsole pp. 145-146
 1. Consider adding vCPUs to SmartConsole VM
-2. Typo in step 4; the IP address of CPCM1 should be `10.0.0.2`
+>> From the author: No need. It works fine with 2 vCPUs
+3. Typo in step 4; the IP address of CPCM1 should be `10.0.0.2`
+>>You are correct.
